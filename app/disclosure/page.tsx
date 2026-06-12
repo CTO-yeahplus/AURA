@@ -37,7 +37,7 @@ export default function DisclosurePage() {
         <h2>문의</h2>
         <p>
           제휴·광고·정정 요청은{" "}
-          <a className="text-brand-dark underline" href="mailto:hello@auraootd.com">hello@auraootd.com</a>
+          <a className="text-brand-dark underline" href="mailto:contact@yeahplus.co.kr">contact@yeahplus.co.kr</a>
           로 연락주세요.
         </p>
       </div>

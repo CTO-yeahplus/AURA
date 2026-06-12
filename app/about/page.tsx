@@ -37,7 +37,7 @@ export default function AboutPage() {
         </p>
         <ul className="list-disc space-y-1 pl-5">
           <li>서비스: <a className="text-brand-dark underline" href="https://auraootd.com">auraootd.com</a></li>
-          <li>제휴·문의: <a className="text-brand-dark underline" href="mailto:hello@auraootd.com">hello@auraootd.com</a></li>
+          <li>제휴·문의: <a className="text-brand-dark underline" href="mailto:contact@yeahplus.co.kr">contact@yeahplus.co.kr</a></li>
         </ul>
       </div>
 

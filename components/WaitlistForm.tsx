@@ -9,10 +9,11 @@ export function WaitlistForm() {
     e.preventDefault();
     if (!email) return;
     try {
-      await fetch("https://formsubmit.co/ajax/hello@auraootd.com", {
+      // 자체 API 라우트(Resend)로 contact@yeahplus.co.kr에 알림 발송.
+      await fetch("/api/waitlist", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ email, _subject: "AURA 대기자 신청" }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
       });
     } catch {
       /* 네트워크 실패해도 UX는 완료 처리 — 중복 제출 방지 */

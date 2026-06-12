@@ -21,7 +21,7 @@ export function Footer() {
             <Link href="/about" className="hover:text-ink">소개</Link>
             <Link href="/disclosure" className="hover:text-ink">제휴 고지</Link>
             <Link href="/privacy" className="hover:text-ink">개인정보처리방침</Link>
-            <a href="mailto:hello@auraootd.com" className="hover:text-ink">문의</a>
+            <a href="mailto:contact@yeahplus.co.kr" className="hover:text-ink">문의</a>
           </div>
         </div>
         <p className="mt-6 text-[13px] text-hint">© 2026 AURA · YEAHPLUS · auraootd.com</p>

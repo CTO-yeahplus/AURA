@@ -24,6 +24,19 @@ vercel --prod           # 프로덕션 배포
   도메인 등록업체(가비아/후이즈/Cloudflare 등)에서 안내된 A 레코드 또는 CNAME 입력.
 - GitHub에 연결하면 push마다 자동 배포(미리보기 URL + 프로덕션).
 
+### 환경변수 (대기자 폼 발송)
+
+대기자 폼은 `/api/waitlist` 라우트에서 **Resend**로 `contact@yeahplus.co.kr`에 알림을 보냅니다(발신
+`hello@auraootd.com`). Vercel → Settings → **Environment Variables**에 추가:
+
+```
+RESEND_API_KEY = re_...   (Resend 대시보드 → API Keys)
+```
+
+- 발신 도메인 `auraootd.com`이 Resend에서 인증돼 있어야 합니다(이미 사용 중).
+- 키가 없으면 폼은 화면상 완료로 보이되 메일은 발송되지 않습니다(503, 안전 처리). 로컬 테스트는
+  `.env.local`에 `RESEND_API_KEY=...` 를 넣고 `npm run dev`.
+
 > 대안: Netlify/Cloudflare Pages도 Next를 지원하지만, Next는 Vercel이 1순위로 매끄럽습니다.
 
 ## 구조

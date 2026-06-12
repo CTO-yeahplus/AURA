@@ -57,7 +57,7 @@ export default function PrivacyPage() {
         <h2>8. 문의처</h2>
         <p>
           개인정보 관련 문의:{" "}
-          <a className="text-brand-dark underline" href="mailto:hello@auraootd.com">hello@auraootd.com</a>
+          <a className="text-brand-dark underline" href="mailto:contact@yeahplus.co.kr">contact@yeahplus.co.kr</a>
           <br />본 방침은 변경될 수 있으며, 변경 시 본 페이지에 공지합니다.
         </p>
       </div>
