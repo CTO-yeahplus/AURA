@@ -4,6 +4,7 @@ import Link from "next/link";
 const links = [
   { href: "/fashion", label: "패션" },
   { href: "/beauty", label: "뷰티" },
+  { href: "/lifestyle", label: "라이프스타일" },
   { href: "/about", label: "소개" },
 ];
 

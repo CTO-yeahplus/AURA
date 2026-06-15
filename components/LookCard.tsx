@@ -1,30 +1,39 @@
 import type { Look } from "@/lib/looks";
 import { Reveal } from "./Reveal";
+import { SmartImg } from "./SmartImg";
 
 export function LookCard({ look, delay = 0 }: { look: Look; delay?: number }) {
   return (
     <Reveal delay={delay}>
-      <article className="group flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift">
-        <div className={`relative aspect-[4/5] bg-gradient-to-br ${look.gradient}`}>
-          <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-ink">
+      <article className="group relative overflow-hidden rounded-[18px] shadow-soft transition-shadow duration-300 hover:shadow-lift">
+        {/* 이미지(또는 그라데이션 폴백) */}
+        <div className={`relative aspect-[3/4] w-full bg-gradient-to-br ${look.gradient}`}>
+          <SmartImg src={look.image} alt={look.title} />
+          {/* 스크림: 캡션 가독성 */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-black/10" />
+          {/* 카테고리 칩 */}
+          <span className="absolute left-3 top-3 rounded-full bg-white/85 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-ink backdrop-blur">
             {look.tag}
           </span>
-        </div>
-        <div className="flex flex-1 flex-col p-4 pb-5">
-          <h3 className="font-serif text-lg text-ink">{look.title}</h3>
-          <p className="mt-1 mb-4 text-sm text-sub">{look.desc}</p>
-          <div className="mt-auto flex flex-wrap gap-2">
-            {look.shops.map((s) => (
-              <a
-                key={s.href}
-                href={s.href}
-                target="_blank"
-                rel="sponsored noopener"
-                className="rounded-full border-[1.5px] border-brand-soft bg-brand-soft px-3 py-1.5 text-[13px] font-bold text-brand-dark transition hover:border-brand"
-              >
-                {s.label}
-              </a>
-            ))}
+          {/* 캡션 + 샵 */}
+          <div className="absolute inset-x-0 bottom-0 p-4">
+            <h3 className="font-serif text-[20px] leading-tight text-white drop-shadow-sm">
+              {look.title}
+            </h3>
+            <p className="mt-1 line-clamp-2 text-[13px] text-white/85">{look.desc}</p>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {look.shops.map((s) => (
+                <a
+                  key={s.href}
+                  href={s.href}
+                  target="_blank"
+                  rel="sponsored noopener"
+                  className="rounded-full border border-white/30 bg-white/15 px-2.5 py-1 text-[12px] font-semibold text-white backdrop-blur-md transition hover:bg-white hover:text-ink"
+                >
+                  {s.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </article>
@@ -34,9 +43,9 @@ export function LookCard({ look, delay = 0 }: { look: Look; delay?: number }) {
 
 export function LookGrid({ looks }: { looks: Look[] }) {
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
       {looks.map((look, i) => (
-        <LookCard key={look.title} look={look} delay={(i % 3) * 0.08} />
+        <LookCard key={look.title} look={look} delay={(i % 3) * 0.06} />
       ))}
     </div>
   );
