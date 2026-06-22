@@ -7,6 +7,7 @@ const config: Config = {
       colors: {
         brand: { DEFAULT: "#8B5CF6", dark: "#6D28D9", soft: "#F1ECFB" },
         accent: "#EC4899",
+        point: { DEFAULT: "#EF4444", soft: "#FEE2E2" }, // 포인트 레드 — 세일·핫·긴급 강조
         ink: "#241F2E",
         navy: "#2E2640",
         sub: "#6E6878",

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://auraootd.com";
-  const routes = ["", "/fashion", "/beauty", "/lifestyle", "/about", "/disclosure", "/privacy"];
+  const routes = ["", "/fashion", "/beauty", "/lifestyle", "/picks", "/about", "/disclosure", "/privacy"];
   return routes.map((r) => ({
     url: `${base}${r}`,
     lastModified: new Date(),

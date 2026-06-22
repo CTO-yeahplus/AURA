@@ -5,6 +5,7 @@ const links = [
   { href: "/fashion", label: "패션" },
   { href: "/beauty", label: "뷰티" },
   { href: "/lifestyle", label: "라이프스타일" },
+  { href: "/picks", label: "Picks" },
   { href: "/about", label: "소개" },
 ];
 

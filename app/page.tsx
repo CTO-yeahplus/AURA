@@ -38,6 +38,11 @@ export default function Home() {
                 10–20대를 위한 OOTD 큐레이션. 마음에 드는 룩을 발견하고, 그 자리에서 바로 따라 사세요.
               </p>
             </Reveal>
+            <Reveal delay={0.2}>
+              <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-point-soft px-3 py-1.5 text-xs font-bold text-point">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-point" /> 출시 임박 · 웨이트리스트 선착순 혜택
+              </span>
+            </Reveal>
             <Reveal delay={0.24}>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Link href="#waitlist" className="btn">앱 출시 알림 받기</Link>

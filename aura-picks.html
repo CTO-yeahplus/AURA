@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AURA PICKS — 오늘의 따라사기</title>
+<!--
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │  쿠팡 파트너스 최종 승인용 채널 페이지 (AURA)                              │
+  │  파트너스 ID: AF4955643                                                    │
+  │                                                                           │
+  │  ▶ 사용법                                                                  │
+  │   1) 쿠팡 파트너스 대시보드 → 간편 링크 생성기로 상품 링크를 만든다.       │
+  │      (생성된 단축 링크 형태: https://link.coupang.com/a/XXXXXX )           │
+  │   2) 아래 각 카드의  data-coupang="여기"  를 그 링크로 교체한다.           │
+  │      (href 와 data-coupang 둘 다 같은 링크로 바꾸면 됨)                    │
+  │   3) 이 페이지를 호스팅(아래 '배포' 참고)하고 그 URL 을                     │
+  │      파트너스 마이페이지 → 계정관리 → 사이트 주소 에 등록.                 │
+  │   4) 이 페이지가 열린 화면(링크/배너 + 고지문구가 보이는)을 캡처해         │
+  │      마이페이지 → 스크린샷 등록.                                           │
+  │                                                                           │
+  │  ⚠ 미등록 채널에서의 활동은 부정행위로 간주됨 — 반드시 이 URL 을 먼저 등록. │
+  │  ⚠ 수수료 고지문구(하단 배너)는 정책상 필수 — 삭제 금지.                   │
+  └─────────────────────────────────────────────────────────────────────────┘
+-->
+<style>
+  :root{
+    --bg:#0E0B1A; --card:#17132B; --line:#2A2342;
+    --ink:#F4F1FA; --muted:#A79FC6; --indigo:#6C5CE7; --gold:#E8C36B;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",Segoe UI,Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:28px 18px 120px}
+  header{display:flex; align-items:center; gap:12px; margin-bottom:6px}
+  .logo{
+    width:40px;height:40px;border-radius:12px;
+    background:linear-gradient(135deg,var(--indigo),var(--gold));
+    display:flex;align-items:center;justify-content:center;font-weight:800;color:#0E0B1A;font-size:18px;
+  }
+  .brand{font-size:22px;font-weight:800;letter-spacing:.5px}
+  .brand small{display:block;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:2px}
+  .hero{
+    margin:18px 0 22px; padding:22px; border-radius:18px;
+    background:linear-gradient(135deg,rgba(108,92,231,.22),rgba(232,195,107,.14));
+    border:1px solid var(--line);
+  }
+  .hero h1{margin:0 0 8px; font-size:26px; line-height:1.25}
+  .hero p{margin:0; color:var(--muted); font-size:14px; line-height:1.6}
+  .partner-banner{
+    margin:18px 0; padding:14px 16px; border-radius:14px;
+    background:#1C1736; border:1px dashed var(--gold);
+    display:flex; align-items:center; gap:12px; font-size:13px; color:var(--ink);
+  }
+  .partner-banner b{color:var(--gold)}
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; margin-top:8px}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .thumb{aspect-ratio:1/1; background:linear-gradient(135deg,#2A2342,#3A2F5E); position:relative}
+  .thumb span{
+    position:absolute; left:10px; top:10px; font-size:11px; font-weight:700;
+    background:rgba(14,11,26,.7); color:var(--gold); padding:4px 8px; border-radius:999px;
+  }
+  .body{padding:14px; display:flex; flex-direction:column; gap:8px; flex:1}
+  .title{font-size:15px; font-weight:700; line-height:1.35}
+  .desc{font-size:12.5px; color:var(--muted); line-height:1.5; flex:1}
+  .price{font-size:14px; font-weight:800; color:var(--gold)}
+  .btn{
+    margin-top:6px; text-align:center; text-decoration:none;
+    background:linear-gradient(135deg,var(--indigo),#5546c9); color:#fff;
+    padding:11px; border-radius:12px; font-size:13.5px; font-weight:700;
+  }
+  .btn:active{opacity:.85}
+  .disclosure{
+    position:fixed; left:0; right:0; bottom:0;
+    background:#0A0814; border-top:1px solid var(--line);
+    padding:14px 18px; font-size:12.5px; color:var(--muted); text-align:center; line-height:1.5;
+  }
+  .disclosure b{color:var(--ink)}
+  footer{margin-top:28px; font-size:12px; color:var(--muted); text-align:center; line-height:1.6}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">A</div>
+      <div class="brand">AURA<small>FASHION · BEAUTY PICKS</small></div>
+    </header>
+
+    <section class="hero">
+      <h1>오늘의 따라사기 ✨</h1>
+      <p>AURA 에디터가 고른 이번 주 패션·뷰티 아이템. 마음에 드는 상품은 아래에서 바로 구매하세요.</p>
+    </section>
+
+    <!-- 쿠팡 파트너스 배너(필수 노출 영역) -->
+    <div class="partner-banner">
+      🛍️ <span>본 추천 상품 구매 시 <b>쿠팡 파트너스</b>를 통해 AURA가 수수료를 받을 수 있습니다.</span>
+    </div>
+
+    <div class="grid">
+      <!-- ── 카드 1 ── data-coupang / href 를 실제 쿠팡 파트너스 링크로 교체 ── -->
+      <article class="card">
+        <div class="thumb"><span>BEAUTY</span></div>
+        <div class="body">
+          <div class="title">데일리 톤업 선크림 SPF50+</div>
+          <div class="desc">가볍게 발리고 백탁 없는 데일리 자외선 차단. 여름 필수템.</div>
+          <div class="price">쿠팡 최저가 보기 →</div>
+          <a class="btn" target="_blank" rel="nofollow sponsored noopener"
+             data-coupang="REPLACE_WITH_COUPANG_LINK"
+             href="https://link.coupang.com/a/REPLACE">쿠팡에서 구매하기</a>
+        </div>
+      </article>
+
+      <!-- ── 카드 2 ── -->
+      <article class="card">
+        <div class="thumb"><span>FASHION</span></div>
+        <div class="body">
+          <div class="title">오버핏 코튼 셔츠</div>
+          <div class="desc">데일리로 입기 좋은 베이식 핏. 청바지·슬랙스 다 잘 어울림.</div>
+          <div class="price">쿠팡 최저가 보기 →</div>
+          <a class="btn" target="_blank" rel="nofollow sponsored noopener"
+             data-coupang="REPLACE_WITH_COUPANG_LINK"
+             href="https://link.coupang.com/a/REPLACE">쿠팡에서 구매하기</a>
+        </div>
+      </article>
+
+      <!-- ── 카드 3 ── -->
+      <article class="card">
+        <div class="thumb"><span>BEAUTY</span></div>
+        <div class="body">
+          <div class="title">립 앤 치크 틴트</div>
+          <div class="desc">한 개로 입술·볼 다 되는 멀티 틴트. 데일리 코랄 컬러.</div>
+          <div class="price">쿠팡 최저가 보기 →</div>
+          <a class="btn" target="_blank" rel="nofollow sponsored noopener"
+             data-coupang="REPLACE_WITH_COUPANG_LINK"
+             href="https://link.coupang.com/a/REPLACE">쿠팡에서 구매하기</a>
+        </div>
+      </article>
+
+      <!-- ── 카드 4 ── -->
+      <article class="card">
+        <div class="thumb"><span>FASHION</span></div>
+        <div class="body">
+          <div class="title">캔버스 숄더백</div>
+          <div class="desc">데일리룩 포인트 가방. 가볍고 수납 넉넉.</div>
+          <div class="price">쿠팡 최저가 보기 →</div>
+          <a class="btn" target="_blank" rel="nofollow sponsored noopener"
+             data-coupang="REPLACE_WITH_COUPANG_LINK"
+             href="https://link.coupang.com/a/REPLACE">쿠팡에서 구매하기</a>
+        </div>
+      </article>
+    </div>
+
+    <footer>
+      AURA — 패션·뷰티 큐레이션 · 파트너스 ID AF4955643<br/>
+      문의: cto@yeahplus.co.kr
+    </footer>
+  </div>
+
+  <!-- 수수료 고지문구(정책상 필수 — 삭제 금지) -->
+  <div class="disclosure">
+    <b>이 페이지는 쿠팡 파트너스 활동의 일환으로,</b> 이에 따른 일정액의 수수료를 제공받습니다.
+  </div>
+</body>
+</html>
