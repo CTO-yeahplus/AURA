@@ -39,7 +39,7 @@ export function linkFor(p: CoupangPick): string {
 
 export const coupangPicks: CoupangPick[] = [
   {
-    title: "데일리 톤업 선크림 SPF50+",
+    title: "설화수 상백톤업 선크림 SPF50+ PA++++",
     tag: "Beauty · 선케어",
     desc: "백탁 없이 가볍게 발리는 데일리 톤업 선크림. 여름 필수템.",
     image: "/01.png",
@@ -49,7 +49,7 @@ export const coupangPicks: CoupangPick[] = [
     partnerUrl: "https://link.coupang.com/a/eMyJSDOJ0m",
   },
   {
-    title: "오버핏 코튼 셔츠",
+    title: "ELLE PARIS 백 버튼 오버핏 코튼 셔츠",
     tag: "Fashion · 데일리",
     desc: "청바지·슬랙스 다 잘 어울리는 베이식 오버핏 셔츠. 사계절 데일리.",
     image: "/02.png",
@@ -59,7 +59,7 @@ export const coupangPicks: CoupangPick[] = [
     partnerUrl: "https://link.coupang.com/a/eMyQueeTzE",
   },
   {
-    title: "글로우 쿠션 팩트",
+    title: "르넥트 컬러 페어링 립앤치크",
     tag: "Beauty · 메이크업",
     desc: "밀착력 좋은 데일리 쿠션 팩트. 자연스러운 광채 마무리.",
     image: "/03.png",
@@ -69,7 +69,7 @@ export const coupangPicks: CoupangPick[] = [
     partnerUrl: "https://link.coupang.com/a/eMySMYnSfI",
   },
   {
-    title: "캔버스 에코 숄더백",
+    title: "킨느 캔버스 호보 숄더백",
     tag: "Fashion · 가방",
     desc: "데일리룩 포인트 가방. 가볍고 수납 넉넉한 캔버스 숄더백.",
     image: "/04.png",
@@ -79,7 +79,7 @@ export const coupangPicks: CoupangPick[] = [
     partnerUrl: "https://link.coupang.com/a/eMyUGy7ptc",
   },
   {
-    title: "퓨어베리 수분 진정 토너 패드",
+    title: "퓨어베리 딸기 토너패드",
     tag: "Beauty · 스킨케어",
     desc: "자극 없이 매일 쓰는 수분·진정 토너 패드. 환절기 트러블 케어.",
     image: "/05.png",
@@ -89,7 +89,7 @@ export const coupangPicks: CoupangPick[] = [
     partnerUrl: "https://link.coupang.com/a/eMyXqiex52",
   },
   {
-    title: "플리츠 미디 스커트",
+    title: "치피 플리츠스커트 미디스커트 스커트",
     tag: "Fashion · 발레코어",
     desc: "봄·여름 데이트룩 1순위. 니트와도, 셔츠와도 잘 어울려요.",
     image: "/06.png",
