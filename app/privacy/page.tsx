@@ -1,66 +1,14 @@
 import type { Metadata } from "next";
+import { LegalArticle } from "@/components/LegalArticle";
+import { PRIVACY } from "@/lib/legalContent";
 
 export const metadata: Metadata = {
-  title: "개인정보처리방침",
-  description: "AURA 개인정보처리방침. Privacy policy for AURA / auraootd.com.",
+  title: "개인정보처리방침 / Privacy Policy",
+  description: "AURA 개인정보처리방침. Privacy Policy for AURA / auraootd.com (한국어 · English).",
 };
 
 export default function PrivacyPage() {
   return (
-    <article className="wrap max-w-3xl py-14">
-      <span className="eyebrow">Privacy</span>
-      <h1 className="mt-3 font-serif text-[clamp(28px,5vw,40px)] font-bold text-navy">개인정보처리방침</h1>
-      <p className="mt-2 text-sm text-hint">최종 업데이트: 2026년 6월 · 운영사: YEAHPLUS</p>
-
-      <div className="mt-6 space-y-5 text-ink [&_h2]:mt-9 [&_h2]:font-serif [&_h2]:text-xl [&_h2]:text-navy [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5">
-        <p>
-          AURA(이하 "서비스")는 이용자의 개인정보를 중요하게 생각하며, 관련 법령을 준수합니다. 본 방침은
-          auraootd.com 웹사이트 및 AURA 앱에 적용됩니다.
-        </p>
-        <h2>1. 수집하는 정보</h2>
-        <ul>
-          <li><strong>가입·계정 정보:</strong> 이메일, 소셜 로그인 식별자, 닉네임, 프로필 이미지.</li>
-          <li><strong>이용 정보:</strong> 좋아요·저장·팔로우 등 활동, 기기·로그·분석 데이터.</li>
-          <li><strong>대기자 신청:</strong> 출시 알림을 위해 입력한 이메일(웹사이트 폼).</li>
-          <li><strong>콘텐츠:</strong> 이용자가 업로드한 룩 사진·캡션 등.</li>
-        </ul>
-        <h2>2. 이용 목적</h2>
-        <ul>
-          <li>서비스 제공·개인화(취향 기반 피드), 계정 관리, 고객지원.</li>
-          <li>서비스 개선을 위한 통계·분석.</li>
-          <li>출시·이벤트 등 안내(수신 동의 시).</li>
-          <li>부정 이용 방지 및 안전(모더레이션).</li>
-        </ul>
-        <h2>3. 제휴 링크·외부 사이트</h2>
-        <p>
-          서비스에는 외부 판매자 및 제휴 네트워크로 연결되는 링크가 포함될 수 있습니다. 링크를 통해
-          이동한 외부 사이트의 개인정보 처리는 해당 사이트의 정책을 따릅니다.
-        </p>
-        <h2>4. 제3자 제공·처리위탁</h2>
-        <p>
-          서비스 운영에 필요한 범위에서 클라우드·인증·분석·제휴 정산 등의 처리업무를 신뢰할 수 있는
-          사업자에게 위탁할 수 있으며, 법령이 정한 경우를 제외하고 동의 없이 개인정보를 외부에 판매하지
-          않습니다.
-        </p>
-        <h2>5. 보관 및 파기</h2>
-        <p>
-          개인정보는 수집·이용 목적이 달성되거나 보관 기간이 만료되면 지체 없이 파기합니다. 이용자는
-          언제든지 계정 삭제(회원 탈퇴)를 요청할 수 있으며, 앱 내에서 직접 삭제할 수 있습니다.
-        </p>
-        <h2>6. 이용자의 권리</h2>
-        <p>이용자는 자신의 개인정보 열람·정정·삭제·처리정지를 요청할 수 있습니다.</p>
-        <h2>7. 쿠키·분석</h2>
-        <p>
-          웹사이트는 기본적인 기능과 분석을 위해 쿠키 또는 유사 기술을 사용할 수 있습니다. 브라우저
-          설정으로 쿠키를 거부할 수 있으나 일부 기능이 제한될 수 있습니다.
-        </p>
-        <h2>8. 문의처</h2>
-        <p>
-          개인정보 관련 문의:{" "}
-          <a className="text-brand-dark underline" href="mailto:contact@yeahplus.co.kr">contact@yeahplus.co.kr</a>
-          <br />본 방침은 변경될 수 있으며, 변경 시 본 페이지에 공지합니다.
-        </p>
-      </div>
-    </article>
+    <LegalArticle eyebrow="Privacy" titleKo="개인정보처리방침" titleEn="Privacy Policy" doc={PRIVACY} />
   );
 }

@@ -1,4 +1,5 @@
 import type { Look } from "@/lib/looks";
+import { wrapLinkPrice } from "@/lib/linkprice";
 import { Reveal } from "./Reveal";
 import { SmartImg } from "./SmartImg";
 
@@ -25,7 +26,7 @@ export function LookCard({ look, delay = 0 }: { look: Look; delay?: number }) {
               {look.shops.map((s) => (
                 <a
                   key={s.href}
-                  href={s.href}
+                  href={wrapLinkPrice(s.href)}
                   target="_blank"
                   rel="sponsored noopener"
                   className="rounded-full border border-white/30 bg-white/15 px-2.5 py-1 text-[12px] font-semibold text-white backdrop-blur-md transition hover:bg-white hover:text-ink"
