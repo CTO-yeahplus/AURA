@@ -6,7 +6,7 @@
 export type Sec = { h: string; p?: string[]; b?: string[] };
 
 export const LEGAL_META = {
-  company: "주식회사 예스플러스(YEAHPLUS Inc.)",
+  company: "주식회사 예아플러스(YEAHPLUS Inc.)",
   app: "AURA",
   contact: "contact@yeahplus.co.kr",
   effectiveKo: "시행일 2026년 7월 1일 · 최종 수정 2026년 6월 25일",
@@ -18,7 +18,7 @@ export const PRIVACY: { ko: Sec[]; en: Sec[] } = {
     {
       h: "",
       p: [
-        '주식회사 예스플러스(이하 "회사")는 AURA 서비스(이하 "서비스") 이용자의 개인정보를 소중히 다루며, 「개인정보 보호법」 등 국내 법령과 적용 가능한 해외 법령(GDPR·CCPA 등)을 준수합니다. 본 방침은 auraootd.com 웹사이트 및 AURA 앱에 적용됩니다.',
+        '주식회사 예아플러스(이하 "회사")는 AURA 서비스(이하 "서비스") 이용자의 개인정보를 소중히 다루며, 「개인정보 보호법」 등 국내 법령과 적용 가능한 해외 법령(GDPR·CCPA 등)을 준수합니다. 본 방침은 auraootd.com 웹사이트 및 AURA 앱에 적용됩니다.',
       ],
     },
     {
@@ -122,7 +122,7 @@ export const PRIVACY: { ko: Sec[]; en: Sec[] } = {
 
 export const TERMS: { ko: Sec[]; en: Sec[] } = {
   ko: [
-    { h: "제1조 (목적)", p: ['본 약관은 주식회사 예스플러스(이하 "회사")가 제공하는 패션·뷰티 콘텐츠 및 커머스 연결 서비스 "AURA"(이하 "서비스")의 이용 조건·절차와 회사·회원 간 권리·의무 및 책임을 규정합니다.'] },
+    { h: "제1조 (목적)", p: ['본 약관은 주식회사 예아플러스(이하 "회사")가 제공하는 패션·뷰티 콘텐츠 및 커머스 연결 서비스 "AURA"(이하 "서비스")의 이용 조건·절차와 회사·회원 간 권리·의무 및 책임을 규정합니다.'] },
     {
       h: "제2조 (정의)",
       b: [

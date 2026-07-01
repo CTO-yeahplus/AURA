@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { COMPANY } from "@/lib/company";
 
 export function Footer() {
   return (
@@ -27,7 +28,22 @@ export function Footer() {
             <a href="mailto:contact@yeahplus.co.kr" className="hover:text-ink">문의</a>
           </div>
         </div>
-        <p className="mt-6 text-[13px] text-hint">© 2026 AURA · YEAHPLUS · auraootd.com</p>
+        {/* 전자상거래법 표시사항(사업자 정보) — PG·본인인증 심사용 상시 표기. */}
+        <div className="mt-8 border-t border-line pt-6 text-[12px] leading-relaxed text-hint">
+          <p className="font-semibold text-sub">{COMPANY.name}</p>
+          <p className="mt-1">
+            대표자 {COMPANY.ceo} · 사업자등록번호 {COMPANY.bizNo} · 통신판매업신고번호{" "}
+            {COMPANY.mailOrderNo}
+          </p>
+          <p className="mt-1">주소: {COMPANY.address}</p>
+          <p className="mt-1">
+            문의:{" "}
+            <a href={`mailto:${COMPANY.email}`} className="underline hover:text-ink">
+              {COMPANY.email}
+            </a>
+          </p>
+          <p className="mt-3">© 2026 AURA · {COMPANY.name} · {COMPANY.domain}</p>
+        </div>
       </div>
     </footer>
   );
