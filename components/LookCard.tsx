@@ -46,7 +46,7 @@ export function LookGrid({ looks }: { looks: Look[] }) {
   return (
     <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
       {looks.map((look, i) => (
-        <LookCard key={look.title} look={look} delay={(i % 3) * 0.06} />
+        <LookCard key={look.id ?? `${look.title}-${i}`} look={look} delay={(i % 3) * 0.06} />
       ))}
     </div>
   );

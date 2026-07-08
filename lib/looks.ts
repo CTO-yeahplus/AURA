@@ -1,6 +1,7 @@
 // AURA 랜딩 — 에디토리얼 룩 데이터(SSOT). 각 룩은 아웃바운드 구매처 링크를 가진다(애그리게이터 모니터링).
 export type Shop = { label: string; href: string };
 export type Look = {
+  id?: string; // 라이브 룩(Supabase) 고유 id — 키 충돌 방지용(정적 룩은 없음)
   title: string;
   tag: string;
   desc: string;

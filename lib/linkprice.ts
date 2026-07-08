@@ -7,8 +7,9 @@
 const LINKPRICE_AID = process.env.NEXT_PUBLIC_LINKPRICE_AID ?? "A100702899";
 const CLICK_BASE = "https://click.linkprice.com/click.php";
 
-// 출처: docs/Linkprice_DetailMerchantList_20260622 승인 머천트 76(2026-06-22). 앱 맵과 1:1.
+// 출처: docs/Linkprice_DetailMerchantList_20260706 승인 머천트 83(2026-07-06). 앱 맵과 1:1.
 const MERCHANT_BY_HOST: Readonly<Record<string, string>> = {
+  "11st.co.kr": "11st",
   "60saju.com": "60saju",
   "agoda.com": "agoda",
   "airalo.com": "airalo",
@@ -36,9 +37,11 @@ const MERCHANT_BY_HOST: Readonly<Record<string, string>> = {
   "gmarket.co.kr": "gmarket",
   "gocity.com": "gocity",
   "gongyoungshop.kr": "gongyoung",
+  "gsshop.com": "gseshop",
   "hbx.com": "hbx",
   "hfashionmall.com": "hfashion",
   "hmall.com": "hmall",
+  "hotels.com": "hotelskr",
   "hotelscombined.co.kr": "hcombine2",
   "iherb.com": "iherb",
   "jejupass.com": "jejupass",
@@ -46,11 +49,13 @@ const MERCHANT_BY_HOST: Readonly<Record<string, string>> = {
   "joseph-fashion.com": "joseph",
   "kkday.com": "kkday",
   "klook.com": "klook",
+  "kurly.com": "kurly",
   "kyobobook.co.kr": "kbbook",
   "lenovo.com": "lenovo",
   "lensbank.com": "lensbank",
   "lotteimall.com": "woori",
   "lotteon.com": "lotteon",
+  "macys.com": "macys",
   "marshallheadphones.com": "marshall",
   "misope.co.kr": "misope",
   "modaoperandi.com": "operandi",
@@ -72,9 +77,11 @@ const MERCHANT_BY_HOST: Readonly<Record<string, string>> = {
   "stockx.com": "stockx",
   "stories.com": "stories",
   "surfshark.com": "surfshark",
+  "thehyundai.com": "thehyundai",
   "theoutnet.com": "outnet",
   "thirtymall.com": "thirtymall",
   "travel.rakuten.com": "rakutentr",
+  "traveloka.com": "traveloka",
   "tstation.com": "tstation",
   "ttang.com": "072com",
   "udemy.com": "udemy",
