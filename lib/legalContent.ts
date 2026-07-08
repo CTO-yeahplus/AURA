@@ -9,8 +9,8 @@ export const LEGAL_META = {
   company: "주식회사 예아플러스(YEAHPLUS Inc.)",
   app: "AURA",
   contact: "contact@yeahplus.co.kr",
-  effectiveKo: "시행일 2026년 7월 1일 · 최종 수정 2026년 6월 25일",
-  effectiveEn: "Effective July 1, 2026 · Last updated June 25, 2026",
+  effectiveKo: "시행일 2026년 7월 1일 · 최종 수정 2026년 7월 8일",
+  effectiveEn: "Effective July 1, 2026 · Last updated July 8, 2026",
 };
 
 export const PRIVACY: { ko: Sec[]; en: Sec[] } = {
@@ -26,8 +26,8 @@ export const PRIVACY: { ko: Sec[]; en: Sec[] } = {
       b: [
         "계정: 이메일, 소셜 로그인 식별자(Apple·Google·Kakao), 닉네임·아바타·소개.",
         "활동·콘텐츠: 올린 룩 사진·캡션·태그, 위시·컬렉션·좋아요·댓글·팔로우, 취향 태그.",
-        "커머스: 따라사기 클릭·아웃링크 이벤트(어트리뷰션 식별자), 구독 상태·결제 플랫폼 정보(카드·계좌 번호는 수집하지 않음).",
-        "AI 생성: 회원이 화보 생성에 사용한 입력 이미지·텍스트.",
+        "커머스: 따라사기 클릭·아웃링크 이벤트(어트리뷰션 식별자), 구독 상태·인앱결제(구독·소비성 크레딧) 상태·결제 플랫폼 정보(카드·계좌 번호는 수집하지 않음).",
+        "AI 생성·크레딧: 회원이 화보 생성에 사용한 입력 이미지·텍스트, 생성 크레딧의 지급·사용·구매 내역(원장).",
         "자동 수집: 기기 정보(OS·모델, 익명화), 접속·이용 로그, 앱 사용 통계, 오류 로그, 푸시 알림 토큰.",
       ],
     },
@@ -36,7 +36,7 @@ export const PRIVACY: { ko: Sec[]; en: Sec[] } = {
       b: [
         "회원 인증 및 서비스 제공·운영, 취향 기반 피드·추천 개인화.",
         "따라사기 연결 및 제휴 수익 어트리뷰션·정산.",
-        "구독·인앱결제 관리.",
+        "구독·인앱결제 및 생성 크레딧 지급·차감·부정사용 방지 관리.",
         "안전·신고·콘텐츠 모더레이션 및 부정 이용 방지.",
         "서비스 품질 개선, 오류 분석, 통계, 법령상 의무 이행.",
       ],
@@ -78,8 +78,8 @@ export const PRIVACY: { ko: Sec[]; en: Sec[] } = {
       b: [
         "Account: email, social login identifiers (Apple/Google/Kakao), nickname, avatar, bio.",
         "Activity & content: uploaded look photos, captions, tags, wishes, collections, likes, comments, follows, taste tags.",
-        "Commerce: shop-the-look click/outlink events (attribution identifiers), subscription status, payment-platform info (we do not collect card or bank numbers).",
-        "AI generation: input images/text you provide to the AI photo feature.",
+        "Commerce: shop-the-look click/outlink events (attribution identifiers), subscription and in-app purchase (subscription/consumable credit) status, payment-platform info (we do not collect card or bank numbers).",
+        "AI generation & credits: input images/text you provide to the AI photo feature, and grant/use/purchase history of generation credits (ledger).",
         "Automatically collected: device info (OS/model, anonymized), access/usage logs, app analytics, error logs, push notification token.",
       ],
     },
@@ -88,7 +88,7 @@ export const PRIVACY: { ko: Sec[]; en: Sec[] } = {
       b: [
         "Authentication, service delivery, and taste-based feed/recommendation personalization.",
         "Shop-the-look routing and affiliate attribution/settlement.",
-        "Subscription and in-app purchase management.",
+        "Subscription, in-app purchase, and generation-credit grant/deduction and abuse prevention.",
         "Safety, reporting, content moderation, and abuse prevention.",
         "Quality improvement, error analysis, statistics, and legal compliance.",
       ],
@@ -130,6 +130,7 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
         "따라사기(아웃링크): 룩에 연결된 외부 판매처로 이동하는 제휴(어필리에이트) 링크.",
         "에셋: 프리셋(LUT)·템플릿·룩북 등 디지털 상품.",
         "AURA+/AURA+ Pro: 자동 갱신 유료 구독 멤버십.",
+        "생성 크레딧: AI 화보 생성에 사용하는 크레딧. 소비성 인앱상품으로 구매하는 '구매 크레딧'과 구독에 포함되어 매월 지급되는 '무료 크레딧'으로 구분됩니다.",
         "크리에이터: 따라사기 등으로 수익을 받을 수 있는 자격을 갖춘 회원.",
       ],
     },
@@ -138,7 +139,7 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
       b: [
         "취향 기반 룩 피드·발견, 위시·컬렉션, 검색·태그 탐색.",
         "외부 판매처에서 구매할 수 있는 따라사기 아웃링크(제7조).",
-        "AI 화보 이미지·문구 생성 등 제작 보조(제8조).",
+        "AI 화보 이미지·문구 생성 등 제작 보조(생성 크레딧 사용, 제8조).",
         "프리셋·템플릿·룩북 등 1회 결제 영구 이용 상품.",
         "AURA+/AURA+ Pro 구독 혜택과 크리에이터 수익화 자격.",
       ],
@@ -153,14 +154,17 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
       ],
     },
     {
-      h: "제5조 (구독 및 인앱결제)",
+      h: "제5조 (구독·인앱결제 및 생성 크레딧)",
       b: [
         "월간·연간 자동 갱신, 결제는 App Store·Google Play 처리.",
         "만료 약 24시간 전 자동 청구, 미해지 시 자동 갱신.",
         "해지·관리·환불은 각 스토어 메뉴/정책에 따름.",
         "업그레이드는 즉시(잔여 비례정산 가능), 다운그레이드는 다음 갱신부터 적용될 수 있음.",
         "에셋 영구 상품은 1회 결제로 계정에서 계속 이용.",
-        "가격·구성 변경은 사전 고지 후 차기 결제 주기 적용.",
+        "생성 크레딧은 소비성 인앱상품으로 충전하며, 구매한 크레딧은 소멸(만료)되지 않습니다(환불 불가, 각 스토어 정책 우선).",
+        "AURA+ Pro 구독에는 매월 무료 생성 크레딧이 포함됩니다. 무료 크레딧은 지급된 달에만 사용할 수 있고 미사용분은 매월 초 소멸되며(이월 없음), 생성 시 무료 크레딧이 구매 크레딧보다 먼저 차감됩니다.",
+        "신규 회원에게 최초 1회에 한해 무료 체험 크레딧이 제공될 수 있습니다.",
+        "가격·구성·크레딧 지급량 변경은 사전 고지 후 차기 결제 주기부터 적용.",
       ],
     },
     {
@@ -193,8 +197,12 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
     {
       h: "제9조 (크리에이터 수익화)",
       b: [
-        "자격을 갖춘 크리에이터는 수익화 프로그램에 참여 가능.",
-        "정산 기준·주기·세금 등은 별도 정책 및 스토어·제휴 네트워크 규정에 따름.",
+        "자격을 갖춘 크리에이터(예: AURA+ Pro 또는 파트너십 지정)는 수익화 프로그램에 참여할 수 있음.",
+        "따라사기 등으로 발생한 확정 제휴 커미션의 기본 50%가 크리에이터 몫으로 적립되며, 등급(받은 저장 수 기준)에 따라 최대 70%까지 상향됨.",
+        "수익은 제휴 네트워크에서 구매가 확정된 후 '확정 수익'이 되며(반품 시 취소), 확정분만 출금 가능액에 반영됨.",
+        "출금은 월 1회, 최소 출금액(₩10,000) 이상일 때 신청 가능하며 본인인증(KYC)이 필요함.",
+        "지급 시 관련 세법에 따른 원천징수(사업소득 3.3% 등)를 공제한 실수령액이 지급됨.",
+        "정산 기준·주기·세금 등 세부 사항은 별도 정책 및 스토어·제휴 네트워크 규정에 따름.",
         "부정 클릭·자전 거래·허위 트래픽 수익은 환수, 자격 제한.",
       ],
     },
@@ -225,6 +233,7 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
         "Shop-the-look (outlink): an affiliate link to an external seller linked to a Look.",
         "Asset: digital goods such as presets (LUTs), templates, and lookbooks.",
         "AURA+/AURA+ Pro: auto-renewing paid subscription memberships.",
+        "Generation credits: credits used for AI photo generation, comprising 'purchased credits' (a consumable in-app product) and 'free credits' included monthly with subscriptions.",
         "Creator: a member eligible to earn revenue (e.g., via shop-the-look).",
       ],
     },
@@ -233,7 +242,7 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
       b: [
         "Taste-based look feed/discovery, wishes/collections, search and tag browsing.",
         "Shop-the-look outlinks to external sellers (Art. 7).",
-        "AI-assisted creation such as photo images/captions (Art. 8).",
+        "AI-assisted creation such as photo images/captions (uses generation credits, Art. 8).",
         "One-time-purchase, permanent-use assets (presets/templates/lookbooks).",
         "AURA+/AURA+ Pro subscription benefits and creator monetization eligibility.",
       ],
@@ -248,14 +257,17 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
       ],
     },
     {
-      h: "5. Subscriptions & IAP",
+      h: "5. Subscriptions, IAP & Generation Credits",
       b: [
         "Monthly/annual auto-renewal; billed via App Store/Google Play.",
         "Charged ~24h before period end; renews automatically unless cancelled.",
         "Cancellation, management, and refunds follow each store's menu/policy.",
         "Upgrades apply immediately (possible proration); downgrades may apply at next renewal.",
         "Permanent assets remain usable on your account after a one-time purchase.",
-        "Price/structure changes apply from the next billing cycle after prior notice.",
+        "Generation credits are topped up via a consumable in-app product; purchased credits do not expire (non-refundable; each store's policy prevails).",
+        "AURA+ Pro includes free generation credits each month. Free credits are usable only within the month granted, unused free credits expire at the start of each month (no carryover), and free credits are deducted before purchased credits.",
+        "New members may receive a one-time free trial credit.",
+        "Changes to price, structure, or credit grant amounts apply from the next billing cycle after prior notice.",
       ],
     },
     {
@@ -288,8 +300,12 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
     {
       h: "9. Creator Monetization",
       b: [
-        "Eligible creators may join monetization programs.",
-        "Settlement criteria, cycles, and taxes follow separate policies and store/affiliate-network rules.",
+        "Eligible creators (e.g., AURA+ Pro or designated partnerships) may join monetization programs.",
+        "A base 50% of confirmed affiliate commissions from shop-the-look is credited to the creator, rising up to 70% by tier (based on saves received).",
+        "Revenue becomes 'confirmed' after the affiliate network confirms the purchase (cancelled on returns); only confirmed amounts count toward withdrawable balance.",
+        "Withdrawals are available once monthly when the balance meets the minimum (KRW 10,000) and require identity verification (KYC).",
+        "Payouts are net of withholding required by tax law (e.g., 3.3% business income).",
+        "Detailed settlement criteria, cycles, and taxes follow separate policies and store/affiliate-network rules.",
         "Revenue from fraudulent clicks, self-dealing, or fake traffic is clawed back and eligibility restricted.",
       ],
     },

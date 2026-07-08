@@ -26,12 +26,35 @@ const steps = [
   {
     n: "04",
     t: "커미션 분배",
-    d: "확정된 제휴 커미션의 50%가 크리에이터 몫으로 적립됩니다. 대시보드에서 확정·예상 수익을 나눠 확인할 수 있어요.",
+    d: "확정된 제휴 커미션이 크리에이터 몫으로 적립됩니다. 기본 50%부터 시작해 등급이 오를수록 최대 70%까지 올라갑니다. 대시보드에서 확정·예상 수익을 나눠 확인할 수 있어요.",
   },
   {
     n: "05",
     t: "정산·출금",
     d: "월 1회, 최소 출금액(₩10,000) 이상이면 출금 신청 → 본인인증(KYC) 확인 후 지급. 지급 시 소득세 원천징수(3.3%)를 공제한 실수령액이 입금됩니다.",
+  },
+];
+
+// 등급별 수익공유율 — 앱 tier.ts(SSOT)와 동일 수치(받은 저장 수 기준).
+const tiers = [
+  { name: "Rising", note: "시작 등급", share: "50%" },
+  { name: "Silver", note: "저장 300+", share: "55%" },
+  { name: "Gold", note: "저장 2,000+", share: "60%" },
+  { name: "Diamond", note: "저장 10,000+", share: "70%" },
+];
+
+const faqs = [
+  {
+    q: "수익이 바로 안 보여요",
+    a: "따라사기 클릭·구매가 제휴 네트워크에 집계되기까지 시차가 있어요. 예상 수익은 대시보드에서 먼저 확인되고, 확정되면 출금 가능액에 반영됩니다.",
+  },
+  {
+    q: "AI 화보로 만든 룩도 수익이 되나요?",
+    a: "네. AI 화보에 넣은 따라사기 상품이 팔리면 일반 룩과 동일하게 수익으로 잡힙니다.",
+  },
+  {
+    q: "수익공유율은 어떻게 오르나요?",
+    a: "받은 저장 수가 쌓이면 등급이 올라가고, 등급이 높을수록 수익공유율이 커집니다(최대 70%).",
   },
 ];
 
@@ -66,6 +89,47 @@ export default function CreatorsPage() {
         </div>
       </section>
 
+      <section className="pb-6">
+        <div className="wrap">
+          <Reveal>
+            <h2 className="font-serif text-[24px] font-bold text-navy">등급별 수익공유율</h2>
+            <p className="mt-2 max-w-2xl text-[14px] leading-relaxed text-sub">
+              받은 저장 수가 쌓일수록 등급이 올라가고, 등급이 높을수록 확정 커미션에서 크리에이터가 가져가는 비율이 커집니다.
+            </p>
+            <div className="mt-5 overflow-hidden rounded-[18px] border border-line bg-white shadow-soft">
+              {tiers.map((t, i) => (
+                <div
+                  key={t.name}
+                  className={`flex items-center px-6 py-4 ${i < tiers.length - 1 ? "border-b border-line" : ""}`}
+                >
+                  <span className="w-24 font-serif text-[17px] font-bold text-navy">{t.name}</span>
+                  <span className="flex-1 text-[13px] text-sub">{t.note}</span>
+                  <span className="text-[18px] font-bold text-brand">{t.share}</span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="pb-6">
+        <div className="wrap">
+          <Reveal>
+            <h2 className="font-serif text-[24px] font-bold text-navy">자주 묻는 질문</h2>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {faqs.map((f, i) => (
+                <Reveal key={f.q} delay={(i % 3) * 0.06}>
+                  <div className="h-full rounded-[18px] border border-line bg-white p-6 shadow-soft">
+                    <h3 className="text-[15px] font-bold text-navy">Q. {f.q}</h3>
+                    <p className="mt-2 text-[14px] leading-relaxed text-sub">{f.a}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="pb-16">
         <div className="wrap">
           <Reveal>
@@ -76,7 +140,7 @@ export default function CreatorsPage() {
                 최상위 멤버십(AURA+ Pro)에 자동으로 부여되며, 파트너십으로 지정된 크리에이터도 포함됩니다.
               </p>
               <ul className="mt-5 space-y-2 text-[14px] text-white/80">
-                <li>· 커미션 분배: 확정 제휴 커미션의 50%가 크리에이터 몫</li>
+                <li>· 커미션 분배: 확정 제휴 커미션의 50%부터 등급별 최대 70%까지 크리에이터 몫</li>
                 <li>· 출금: 월 1회 · 최소 ₩10,000 · 본인인증(KYC) 필요</li>
                 <li>· 세금: 지급 시 3.3% 원천징수(사업소득) 후 실수령</li>
                 <li>· 투명성: 확정/예상 수익과 전환 상태를 대시보드에서 상시 확인</li>
