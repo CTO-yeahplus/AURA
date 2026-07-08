@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Reveal } from "@/components/Reveal";
 import { LookGrid } from "@/components/LookCard";
+import { LiveLookGrid } from "@/components/LiveLookCard";
 import { DisclosureNote } from "@/components/DisclosureNote";
+import { getLiveLooks } from "@/lib/liveLooks";
 import { lifestyleLooks } from "@/lib/looks";
 
 export const metadata: Metadata = {
@@ -11,7 +13,10 @@ export const metadata: Metadata = {
 
 const chips = ["Shoes", "Accessories", "Jewelry", "Lifestyle"];
 
-export default function LifestylePage() {
+export const dynamic = "force-dynamic";
+
+export default async function LifestylePage() {
+  const live = await getLiveLooks({ limit: 60 });
   return (
     <>
       <section className="pt-14 pb-7">
@@ -35,7 +40,7 @@ export default function LifestylePage() {
       </section>
       <section className="pb-14">
         <div className="wrap">
-          <LookGrid looks={lifestyleLooks} />
+          {live.length > 0 ? <LiveLookGrid looks={live} /> : <LookGrid looks={lifestyleLooks} />}
           <div className="mt-7">
             <DisclosureNote />
           </div>

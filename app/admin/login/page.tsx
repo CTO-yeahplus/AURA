@@ -16,12 +16,17 @@ export default function AdminLogin() {
     setMsg("");
     const { error } = await sb.auth.signInWithOtp({
       email: email.trim(),
-      options: { shouldCreateUser: false },
+      options: {
+        shouldCreateUser: false,
+        // 매직 링크를 클릭하면 /admin으로 복귀해 자동 로그인(코드 미설정 시에도 로그인 가능).
+        emailRedirectTo:
+          typeof window !== "undefined" ? `${window.location.origin}/admin` : undefined,
+      },
     });
     setBusy(false);
-    if (error) return setMsg(`코드 전송 실패: ${error.message}`);
+    if (error) return setMsg(`전송 실패: ${error.message}`);
     setSent(true);
-    setMsg("이메일로 보낸 6자리 코드를 입력하세요.");
+    setMsg("이메일의 로그인 링크를 클릭하거나, 6자리 코드가 있으면 아래에 입력하세요.");
   }
 
   async function verify() {

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { SmartImg } from "@/components/SmartImg";
+import { LiveLookGrid } from "@/components/LiveLookCard";
+import { getLiveLooks } from "@/lib/liveLooks";
 import { GUIDES } from "@/lib/guides";
 
 export const metadata: Metadata = {
@@ -10,7 +12,10 @@ export const metadata: Metadata = {
     "AURA 에디터의 패션·뷰티 스타일 가이드. 계절별 코디법과 메이크업 루틴을 따라 하기 쉽게 정리하고, 아이템 구매처까지 연결했어요.",
 };
 
-export default function GuidesPage() {
+export const dynamic = "force-dynamic";
+
+export default async function GuidesPage() {
+  const live = await getLiveLooks({ limit: 12 });
   return (
     <>
       <section className="pt-14 pb-7">
@@ -56,6 +61,20 @@ export default function GuidesPage() {
           </div>
         </div>
       </section>
+
+      {live.length > 0 ? (
+        <section className="pb-16">
+          <div className="wrap">
+            <Reveal>
+              <h2 className="font-serif text-[24px] font-bold text-navy">오늘의 룩</h2>
+              <p className="mt-2 text-[14px] text-sub">가이드와 함께 보는 실시간 OOTD. 눌러서 아이템까지.</p>
+            </Reveal>
+            <div className="mt-5">
+              <LiveLookGrid looks={live} />
+            </div>
+          </div>
+        </section>
+      ) : null}
     </>
   );
 }

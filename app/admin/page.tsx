@@ -34,13 +34,17 @@ export default function AdminPage() {
       setReady(true);
       return;
     }
-    sb.auth.getSession().then(({ data }) => {
-      const user = data.session?.user;
+    const apply = (session: { user?: { id?: string; email?: string } } | null) => {
+      const user = session?.user;
       setEmail(user?.email ?? null);
       setUid(user?.id ?? null);
       if (user?.email === ADMIN_EMAIL && user.id) load(user.id).finally(() => setReady(true));
       else setReady(true);
-    });
+    };
+    sb.auth.getSession().then(({ data }) => apply(data.session));
+    // 매직 링크 복귀 등으로 세션이 뒤늦게 생기면 반영(URL 토큰 처리 후).
+    const { data: sub } = sb.auth.onAuthStateChange((_e, session) => apply(session));
+    return () => sub.subscription.unsubscribe();
   }, [load]);
 
   async function saveEdit(id: string) {
