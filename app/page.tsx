@@ -80,7 +80,7 @@ export default function Home() {
                   이번 주의 룩
                 </h2>
               </div>
-              <Link href="/fashion" className="hidden shrink-0 text-sm font-bold text-brand-dark hover:underline sm:block">
+              <Link href="/ootd" className="hidden shrink-0 text-sm font-bold text-brand-dark hover:underline sm:block">
                 전체 보기 →
               </Link>
             </div>
@@ -110,9 +110,8 @@ export default function Home() {
                   연결돼요. "저 옷 어디 거지?"는 이제 끝.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2.5">
-                  <Link href="/fashion" className="chip">패션</Link>
-                  <Link href="/beauty" className="chip">뷰티</Link>
-                  <Link href="/lifestyle" className="chip">라이프스타일</Link>
+                  <Link href="/ootd" className="chip">OOTD 피드</Link>
+                  <Link href="/guides" className="chip">스타일 가이드</Link>
                 </div>
               </div>
             </div>

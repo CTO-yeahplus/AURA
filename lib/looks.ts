@@ -8,6 +8,7 @@ export type Look = {
   gradient: string; // tailwind gradient classes (이미지 로드 실패 시 폴백 배경)
   shops: Shop[];
   image?: string; // 에디토리얼 사진(아래 attachImages로 자동 주입)
+  keywords?: string; // 검색용 소문자 텍스트(제목·설명·카테고리·태그·브랜드). 라이브 룩만 주입.
 };
 
 // 검증된 Unsplash 에디토리얼 사진 풀(패션·뷰티·라이프스타일). 실제 닿는 ID만 큐레이션.

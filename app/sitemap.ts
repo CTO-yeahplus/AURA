@@ -1,14 +1,14 @@
 import type { MetadataRoute } from "next";
-import { GUIDES } from "@/lib/guides";
+import { getMergedGuides } from "@/lib/guidesDb";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = "https://auraootd.com";
+  const guides = await getMergedGuides();
   const routes = [
     "",
-    "/fashion",
-    "/beauty",
-    "/lifestyle",
+    "/ootd",
     "/guides",
+    "/creators",
     "/picks",
     "/about",
     "/disclosure",
@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
     priority: r === "" ? 1 : 0.7,
   }));
-  const guideEntries = GUIDES.map((g) => ({
+  const guideEntries = guides.map((g) => ({
     url: `${base}/guides/${g.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,

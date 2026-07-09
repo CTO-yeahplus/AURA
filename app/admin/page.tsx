@@ -143,6 +143,7 @@ export default function AdminPage() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h1 className="font-serif text-[28px] font-bold text-navy">룩 관리</h1>
         <div className="flex items-center gap-3">
+          <Link href="/admin/guides" className="text-[14px] font-semibold text-brand">가이드 관리 →</Link>
           <button onClick={() => setShowCreate((v) => !v)} className="btn">{showCreate ? "닫기" : "+ 새 룩"}</button>
           <button onClick={signOut} className="text-[14px] text-sub underline">로그아웃</button>
         </div>

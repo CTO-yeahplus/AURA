@@ -3,9 +3,6 @@ import Link from "next/link";
 
 const links = [
   { href: "/ootd", label: "OOTD" },
-  { href: "/fashion", label: "패션" },
-  { href: "/beauty", label: "뷰티" },
-  { href: "/lifestyle", label: "라이프스타일" },
   { href: "/guides", label: "가이드" },
   { href: "/creators", label: "크리에이터" },
   { href: "/picks", label: "Picks" },

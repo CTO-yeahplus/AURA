@@ -19,14 +19,28 @@ export type LiveCardRow = {
 
 /** 조인 행 → 랜딩 Look. 서버·클라이언트(무한로드) 공용(순수). */
 export function mapCardRow(r: LiveCardRow): Look {
-  const tag = (r.look_tags ?? [])
+  const allTags = (r.look_tags ?? [])
     .map((t) => t?.tags?.name)
-    .find((n): n is string => typeof n === "string" && n.length > 0);
-  const shops = (r.look_products ?? [])
+    .filter((n): n is string => typeof n === "string" && n.length > 0);
+  const tag = allTags[0];
+  const products = (r.look_products ?? [])
     .map((lp) => lp?.products)
-    .filter((p): p is NonNullable<typeof p> => !!p && typeof p.affiliate_url === "string" && p.affiliate_url.length > 0)
+    .filter((p): p is NonNullable<typeof p> => !!p && typeof p.affiliate_url === "string" && p.affiliate_url.length > 0);
+  const shops = products
     .slice(0, 6)
     .map((p) => ({ label: p.brand || p.title || "구매처", href: p.affiliate_url as string }));
+  // 검색 인덱스: 제목·설명·카테고리·모든 태그·브랜드·상품명(해시태그·키워드 검색 대응).
+  const keywords = [
+    r.title,
+    r.caption,
+    r.category,
+    ...allTags,
+    ...products.map((p) => p.brand),
+    ...products.map((p) => p.title),
+  ]
+    .filter((s): s is string => typeof s === "string" && s.length > 0)
+    .join(" ")
+    .toLowerCase();
   return {
     id: r.id,
     title: r.title || r.caption || "오늘의 룩",
@@ -35,6 +49,7 @@ export function mapCardRow(r: LiveCardRow): Look {
     gradient: "from-brand-soft to-accent",
     image: r.media_url || undefined,
     shops,
+    keywords,
   };
 }
 

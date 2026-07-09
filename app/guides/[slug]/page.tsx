@@ -4,15 +4,14 @@ import { notFound } from "next/navigation";
 import { Reveal } from "@/components/Reveal";
 import { SmartImg } from "@/components/SmartImg";
 import { DisclosureNote } from "@/components/DisclosureNote";
-import { GUIDES, findGuide } from "@/lib/guides";
+import { findMergedGuide } from "@/lib/guidesDb";
 import { wrapLinkPrice } from "@/lib/linkprice";
 
-export function generateStaticParams() {
-  return GUIDES.map((g) => ({ slug: g.slug }));
-}
+// DB 발행 가이드를 반영하기 위해 동적 렌더(관리자 발행 즉시 노출).
+export const dynamic = "force-dynamic";
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const g = findGuide(params.slug);
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const g = await findMergedGuide(params.slug);
   if (!g) return { title: "스타일 가이드" };
   return {
     title: g.title,
@@ -25,8 +24,8 @@ function won(n?: number): string {
   return typeof n === "number" ? `₩${n.toLocaleString("ko-KR")}` : "";
 }
 
-export default function GuideArticle({ params }: { params: { slug: string } }) {
-  const g = findGuide(params.slug);
+export default async function GuideArticle({ params }: { params: { slug: string } }) {
+  const g = await findMergedGuide(params.slug);
   if (!g) notFound();
 
   return (
@@ -52,7 +51,7 @@ export default function GuideArticle({ params }: { params: { slug: string } }) {
       <section className="pt-7">
         <div className="wrap">
           <Reveal>
-            <div className={`relative aspect-[16/9] w-full overflow-hidden rounded-[18px] bg-gradient-to-br ${g.heroGradient}`}>
+            <div className={`group relative aspect-[16/9] w-full overflow-hidden rounded-[18px] bg-gradient-to-br ${g.heroGradient}`}>
               <SmartImg src={g.image} alt={g.title} />
             </div>
             <p className="mt-6 max-w-2xl text-[16px] leading-relaxed text-ink">{g.intro}</p>
@@ -69,7 +68,7 @@ export default function GuideArticle({ params }: { params: { slug: string } }) {
                 Look {String(i + 1).padStart(2, "0")}
               </span>
               <h2 className="mt-1.5 font-serif text-[24px] font-bold text-navy">{s.look}</h2>
-              <div className={`mt-4 aspect-[3/2] w-full overflow-hidden rounded-2xl bg-gradient-to-br ${s.gradient}`}>
+              <div className={`group relative mt-4 aspect-[3/2] w-full overflow-hidden rounded-2xl bg-gradient-to-br ${s.gradient}`}>
                 <SmartImg src={s.image} alt={s.look} />
               </div>
               <p className="mt-4 text-[16px] leading-relaxed text-ink">{s.body}</p>

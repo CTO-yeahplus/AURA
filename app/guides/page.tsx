@@ -4,7 +4,7 @@ import { Reveal } from "@/components/Reveal";
 import { SmartImg } from "@/components/SmartImg";
 import { LiveLookGrid } from "@/components/LiveLookCard";
 import { getLiveLooks } from "@/lib/liveLooks";
-import { GUIDES } from "@/lib/guides";
+import { getMergedGuides } from "@/lib/guidesDb";
 
 export const metadata: Metadata = {
   title: "스타일 가이드 — 코디·뷰티 큐레이션",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function GuidesPage() {
-  const live = await getLiveLooks({ limit: 12 });
+  const [live, guides] = await Promise.all([getLiveLooks({ limit: 12 }), getMergedGuides()]);
   return (
     <>
       <section className="pt-14 pb-7">
@@ -36,7 +36,7 @@ export default async function GuidesPage() {
       <section className="pb-14">
         <div className="wrap">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            {GUIDES.map((g, i) => (
+            {guides.map((g, i) => (
               <Reveal key={g.slug} delay={(i % 2) * 0.06}>
                 <Link
                   href={`/guides/${g.slug}`}

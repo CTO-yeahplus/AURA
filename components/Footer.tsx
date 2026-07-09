@@ -17,8 +17,7 @@ export function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap gap-5 text-sm font-semibold text-sub">
-            <Link href="/fashion" className="hover:text-ink">패션</Link>
-            <Link href="/beauty" className="hover:text-ink">뷰티</Link>
+            <Link href="/ootd" className="hover:text-ink">OOTD</Link>
             <Link href="/guides" className="hover:text-ink">스타일 가이드</Link>
             <Link href="/about" className="hover:text-ink">소개</Link>
             <Link href="/disclosure" className="hover:text-ink">제휴 고지</Link>
