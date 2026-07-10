@@ -69,6 +69,41 @@ export default function Home() {
         </div>
       </div>
 
+      {/* ABOUT — 앱 목적 명시(구글 OAuth 브랜드 인증: 홈페이지에 앱 설명 필수) */}
+      <section className="border-b border-line bg-white py-14">
+        <div className="wrap max-w-3xl">
+          <Reveal>
+            <span className="eyebrow">About AURA</span>
+            <h2 className="mt-2 font-serif text-[clamp(24px,3.6vw,36px)] font-bold leading-tight text-navy">
+              AURA는 어떤 앱인가요?
+            </h2>
+            <p className="mt-4 text-[16px] leading-relaxed text-ink">
+              AURA는 10–20대 여성을 위한 <b>패션·뷰티 커뮤니티 모바일 앱</b>입니다. 사용자는 매일의
+              코디(룩)를 발견하고 공유하며, 마음에 드는 아이템을 연결된 구매처에서 바로 따라 살 수
+              있어요. Google 또는 Apple 계정으로 로그인하면 취향 맞춤 피드, 위시리스트, 크리에이터
+              기능(따라사기 수익)을 이용할 수 있습니다.
+            </p>
+            <p className="mt-3 text-[15px] leading-relaxed text-sub">
+              AURA is a fashion &amp; beauty community mobile app for young women. Users discover and
+              share daily outfits (&ldquo;looks&rdquo;) and shop the items from linked retailers.
+              Signing in with your Google or Apple account unlocks a personalized feed, wishlist, and
+              creator features.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-4 text-[14px] font-semibold">
+              <Link href="/about" className="text-brand-dark hover:underline">
+                더 알아보기 →
+              </Link>
+              <Link href="/privacy" className="text-sub hover:underline">
+                개인정보처리방침
+              </Link>
+              <Link href="/terms" className="text-sub hover:underline">
+                이용약관
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* LOOKS */}
       <section id="looks" className="py-16">
         <div className="wrap">
