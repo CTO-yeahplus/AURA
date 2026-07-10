@@ -58,6 +58,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ABOUT — 앱 목적 명시(구글 OAuth 브랜드 인증: 홈페이지에 앱 설명 필수).
+          중요: Reveal(opacity 애니메이션) 미사용 — 크롤러/리뷰어가 스크롤·JS 없이도 항상
+          보이도록 정적 렌더. 히어로 바로 아래(상단)에 배치해 즉시 노출한다. */}
+      <section className="border-b border-line bg-white py-12">
+        <div className="wrap max-w-3xl">
+          <span className="eyebrow">About AURA</span>
+          <h2 className="mt-2 font-serif text-[clamp(24px,3.6vw,36px)] font-bold leading-tight text-navy">
+            AURA는 어떤 앱인가요?
+          </h2>
+          <p className="mt-4 text-[16px] leading-relaxed text-ink">
+            AURA는 10–20대 여성을 위한 <b>패션·뷰티 커뮤니티 모바일 앱</b>입니다. 사용자는 매일의
+            코디(룩)를 발견하고 공유하며, 마음에 드는 아이템을 연결된 구매처에서 바로 따라 살 수
+            있어요. Google 또는 Apple 계정으로 로그인하면 취향 맞춤 피드, 위시리스트, 크리에이터
+            기능(따라사기 수익)을 이용할 수 있습니다.
+          </p>
+          <p className="mt-3 text-[15px] leading-relaxed text-sub">
+            AURA is a fashion &amp; beauty community mobile app for young women (teens–20s). Users
+            discover and share daily outfits (&ldquo;looks&rdquo;) and shop the items from linked
+            retailers. Signing in with your Google or Apple account unlocks a personalized feed,
+            wishlist, and creator features.
+          </p>
+
+          {/* 데이터 요청 목적 투명성(구글 브랜드 인증 요건) */}
+          <div className="mt-5 rounded-2xl border border-line bg-cream-muted p-5">
+            <p className="text-[15px] leading-relaxed text-ink">
+              <b>데이터 사용 안내</b> — Google 계정으로 로그인하면 AURA는 <b>이메일 주소</b>와 기본
+              프로필 정보(<b>이름·프로필 사진</b>)만 받습니다. 이 정보는 계정 생성·로그인 및 앱 내
+              프로필 표시에만 사용하며, 그 외 데이터는 요청하지 않습니다. 자세한 내용은 개인정보
+              처리방침을 확인하세요.
+            </p>
+            <p className="mt-2 text-[14px] leading-relaxed text-sub">
+              When you sign in with Google, AURA only requests your <b>email address</b> and basic
+              profile info (<b>name, profile picture</b>) to create your account, sign you in, and
+              show your profile. We do not request any other data. See our Privacy Policy for
+              details.
+            </p>
+          </div>
+
+          <div className="mt-5 flex flex-wrap gap-4 text-[14px] font-semibold">
+            <Link href="/about" className="text-brand-dark hover:underline">
+              더 알아보기 →
+            </Link>
+            <Link href="/privacy" className="text-sub hover:underline">
+              개인정보처리방침
+            </Link>
+            <Link href="/terms" className="text-sub hover:underline">
+              이용약관
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* MARQUEE — 입점 브랜드 티커 */}
       <div className="overflow-hidden border-y border-line bg-cream py-4">
         <div className="marquee flex w-max gap-10 whitespace-nowrap">
@@ -68,41 +120,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-
-      {/* ABOUT — 앱 목적 명시(구글 OAuth 브랜드 인증: 홈페이지에 앱 설명 필수) */}
-      <section className="border-b border-line bg-white py-14">
-        <div className="wrap max-w-3xl">
-          <Reveal>
-            <span className="eyebrow">About AURA</span>
-            <h2 className="mt-2 font-serif text-[clamp(24px,3.6vw,36px)] font-bold leading-tight text-navy">
-              AURA는 어떤 앱인가요?
-            </h2>
-            <p className="mt-4 text-[16px] leading-relaxed text-ink">
-              AURA는 10–20대 여성을 위한 <b>패션·뷰티 커뮤니티 모바일 앱</b>입니다. 사용자는 매일의
-              코디(룩)를 발견하고 공유하며, 마음에 드는 아이템을 연결된 구매처에서 바로 따라 살 수
-              있어요. Google 또는 Apple 계정으로 로그인하면 취향 맞춤 피드, 위시리스트, 크리에이터
-              기능(따라사기 수익)을 이용할 수 있습니다.
-            </p>
-            <p className="mt-3 text-[15px] leading-relaxed text-sub">
-              AURA is a fashion &amp; beauty community mobile app for young women. Users discover and
-              share daily outfits (&ldquo;looks&rdquo;) and shop the items from linked retailers.
-              Signing in with your Google or Apple account unlocks a personalized feed, wishlist, and
-              creator features.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-4 text-[14px] font-semibold">
-              <Link href="/about" className="text-brand-dark hover:underline">
-                더 알아보기 →
-              </Link>
-              <Link href="/privacy" className="text-sub hover:underline">
-                개인정보처리방침
-              </Link>
-              <Link href="/terms" className="text-sub hover:underline">
-                이용약관
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* LOOKS */}
       <section id="looks" className="py-16">
