@@ -10,7 +10,7 @@ export default function DisclosurePage() {
     <article className="wrap max-w-3xl py-14">
       <span className="eyebrow">Affiliate Disclosure</span>
       <h1 className="mt-3 font-serif text-[clamp(28px,5vw,40px)] font-bold text-navy">제휴(어필리에이트) 고지</h1>
-      <p className="mt-2 text-sm text-hint">최종 업데이트: 2026년 6월</p>
+      <p className="mt-2 text-sm text-hint">최종 업데이트: 2026년 7월</p>
 
       <div className="mt-6 space-y-5 text-ink [&_h2]:mt-9 [&_h2]:font-serif [&_h2]:text-2xl [&_h2]:text-navy">
         <p>
@@ -29,6 +29,14 @@ export default function DisclosurePage() {
           <li>수수료 수취 여부가 콘텐츠(룩·추천)의 진정성에 영향을 주지 않도록 합니다.</li>
           <li>표시 가격·혜택은 판매자 정책을 따르며, 최종 가격·재고는 구매처에서 확인해야 합니다.</li>
         </ul>
+        <h2>가격 정보 정확성</h2>
+        <p>
+          AURA에 표시되는 가격·할인·재고 등 상품 정보는 <strong>수집 시점 기준의 참고 정보</strong>이며,
+          실제 판매처가 제공하는 정보와 다를 수 있습니다. 수집 지연·오류·품절 등으로 가격이 부정확하게
+          (예: 0원으로) 표시될 수 있으므로, <strong>최종 가격·재고·구매 조건은 반드시 구매(판매)
+          사이트에서 직접 확인</strong>하시기 바랍니다. AURA는 <strong>통신판매중개자</strong>로서 통신판매의
+          당사자가 아니며, 표시 정보의 정확성을 보증하지 않습니다.
+        </p>
         <h2>제휴 네트워크</h2>
         <p>
           AURA는 직접 제휴 및 제휴 애그리게이터 네트워크(예: Sovrn Commerce, Skimlinks 등)를 통해 다양한

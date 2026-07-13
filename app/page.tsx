@@ -33,11 +33,12 @@ export default function Home() {
                 오늘의 무드를<br />입는 가장 쉬운 방법.
               </h1>
             </Reveal>
-            <Reveal delay={0.16}>
-              <p className="mt-5 max-w-lg text-[clamp(15px,2vw,18px)] text-white/85">
-                10–20대를 위한 OOTD 큐레이션. 마음에 드는 룩을 발견하고, 그 자리에서 바로 따라 사세요.
-              </p>
-            </Reveal>
+            {/* 앱 목적 설명 — 히어로 최상단, Reveal(opacity) 미사용으로 항상 노출.
+                구글 브랜드 인증 자동검사가 스크롤·JS 없이 상단만 봐도 앱 목적을 읽도록 정적 렌더. */}
+            <p className="mt-5 max-w-xl text-[clamp(15px,2vw,18px)] text-white/85">
+              <b>AURA</b>는 10–20대 여성을 위한 <b>패션·뷰티 OOTD 모바일 앱</b>이에요. 마음에 드는
+              룩을 발견하고, 그 자리에서 바로 따라 사세요.
+            </p>
             <Reveal delay={0.2}>
               <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-point-soft px-3 py-1.5 text-xs font-bold text-point">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-point" /> 출시 임박 · 웨이트리스트 선착순 혜택
