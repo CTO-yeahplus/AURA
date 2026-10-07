@@ -203,9 +203,9 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
       b: [
         "크리에이터 수익화(정산)는 만 19세 이상 성인 회원만 참여할 수 있음. 미성년자는 일반 기능은 이용 가능하나 수익화 프로그램에는 참여 불가.",
         "자격을 갖춘 크리에이터(예: AURA+ Pro 또는 파트너십 지정)는 수익화 프로그램에 참여할 수 있음.",
-        "따라사기 등으로 발생한 확정 제휴 커미션의 기본 50%가 크리에이터 몫으로 적립되며, 등급(받은 저장 수 기준)에 따라 최대 70%까지 상향됨.",
+        "따라사기 등으로 발생한 확정 제휴 커미션의 50%가 크리에이터 몫으로 적립됨. 회사는 등급(받은 저장 수 기준)에 따른 수익공유율 상향 제도를 도입할 수 있으며, 도입 시 사전 공지함.",
         "수익은 제휴 네트워크에서 구매가 확정된 후 '확정 수익'이 되며(반품 시 취소), 확정분만 출금 가능액에 반영됨.",
-        "출금은 월 1회, 최소 출금액(₩10,000) 이상일 때 신청 가능하며 본인인증(KYC)이 필요함.",
+        "출금은 월 1회, 최소 출금액(₩10,000) 이상일 때 신청 가능. 회사는 지급 전 본인확인·세금 처리를 위해 신분증·계좌 정보 등 서류를 등록된 이메일로 요청하며, 확인 완료 후 지급함.",
         "지급 시 관련 세법에 따른 원천징수(사업소득 3.3% 등)를 공제한 실수령액이 지급됨.",
         "정산 기준·주기·세금 등 세부 사항은 별도 정책 및 스토어·제휴 네트워크 규정에 따름.",
         "부정 클릭·자전 거래·허위 트래픽 수익은 환수, 자격 제한.",
@@ -309,9 +309,9 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
       h: "9. Creator Monetization",
       b: [
         "Eligible creators (e.g., AURA+ Pro or designated partnerships) may join monetization programs.",
-        "A base 50% of confirmed affiliate commissions from shop-the-look is credited to the creator, rising up to 70% by tier (based on saves received).",
+        "50% of confirmed affiliate commissions from shop-the-look is credited to the creator. We may introduce a tier-based increase (based on saves received) and will announce it in advance.",
         "Revenue becomes 'confirmed' after the affiliate network confirms the purchase (cancelled on returns); only confirmed amounts count toward withdrawable balance.",
-        "Withdrawals are available once monthly when the balance meets the minimum (KRW 10,000) and require identity verification (KYC).",
+        "Withdrawals are available once monthly when the balance meets the minimum (KRW 10,000). Before payment, we request identity and bank documents by email for verification and tax purposes, and pay once verification is complete.",
         "Payouts are net of withholding required by tax law (e.g., 3.3% business income).",
         "Detailed settlement criteria, cycles, and taxes follow separate policies and store/affiliate-network rules.",
         "Revenue from fraudulent clicks, self-dealing, or fake traffic is clawed back and eligibility restricted.",
