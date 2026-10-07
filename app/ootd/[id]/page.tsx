@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AiBadge } from "@/components/AiBadge";
 import { SmartImg } from "@/components/SmartImg";
 import { DisclosureNote } from "@/components/DisclosureNote";
+import { isAiImage } from "@/lib/aiGenerated";
 import { getLiveLookDetail } from "@/lib/liveLooks";
 import { wrapLinkPrice } from "@/lib/linkprice";
 
@@ -35,9 +37,16 @@ export default async function LookDetailPage({ params }: { params: { id: string 
               className="relative aspect-[3/4] w-full overflow-hidden rounded-[16px] bg-line"
             >
               <SmartImg src={src} alt={look.title} />
+              {isAiImage(src) ? <AiBadge className="left-3 top-3" /> : null}
             </div>
           ))}
         </div>
+        {look.images.some((src) => isAiImage(src)) ? (
+          <p className="mt-2 text-[12px] text-sub">
+            이 룩의 화보는 생성형 AI로 만든 이미지예요. 실제 인물을 촬영한 사진이 아니며, 따라사기
+            상품은 실제 판매 상품이에요.
+          </p>
+        ) : null}
 
         <h1 className="mt-6 font-serif text-[26px] font-bold leading-tight text-navy">
           {look.title}

@@ -9,8 +9,8 @@ export const LEGAL_META = {
   company: "주식회사 예아플러스(YEAHPLUS Inc.)",
   app: "AURA",
   contact: "contact@yeahplus.co.kr",
-  effectiveKo: "시행일 2026년 7월 1일 · 최종 수정 2026년 7월 13일",
-  effectiveEn: "Effective July 1, 2026 · Last updated July 13, 2026",
+  effectiveKo: "시행일 2026년 7월 1일 · 최종 수정 2026년 10월 7일",
+  effectiveEn: "Effective July 1, 2026 · Last updated October 7, 2026",
 };
 
 export const PRIVACY: { ko: Sec[]; en: Sec[] } = {
@@ -162,7 +162,7 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
         "업그레이드는 즉시(잔여 비례정산 가능), 다운그레이드는 다음 갱신부터 적용될 수 있음.",
         "에셋 영구 상품은 1회 결제로 계정에서 계속 이용.",
         "생성 크레딧은 소비성 인앱상품으로 충전하며, 구매한 크레딧은 소멸(만료)되지 않습니다(환불 불가, 각 스토어 정책 우선).",
-        "AURA+ Pro 구독에는 매월 무료 생성 크레딧이 포함됩니다. 무료 크레딧은 지급된 달에만 사용할 수 있고 미사용분은 매월 초 소멸되며(이월 없음), 생성 시 무료 크레딧이 구매 크레딧보다 먼저 차감됩니다.",
+        "AURA+ 구독에는 매월 10개, AURA+ Pro 구독에는 매월 30개의 무료 생성 크레딧이 포함됩니다. 같은 달에 AURA+에서 AURA+ Pro로 전환하면 차액이 즉시 지급됩니다. 무료 크레딧은 지급된 달에만 사용할 수 있고 미사용분은 매월 초 소멸되며(이월 없음), 생성 시 무료 크레딧이 구매 크레딧보다 먼저 차감됩니다.",
         "신규 회원에게 최초 1회에 한해 무료 체험 크레딧이 제공될 수 있습니다.",
         "가격·구성·크레딧 지급량 변경은 사전 고지 후 차기 결제 주기부터 적용.",
       ],
@@ -190,6 +190,9 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
       h: "제8조 (AI 생성 콘텐츠)",
       b: [
         "일부 콘텐츠는 AI로 생성·보정될 수 있음.",
+        "AI 화보 생성 기능은 생성형 인공지능 기반으로 운영됨. 회사는 「인공지능 발전과 신뢰 기반 조성 등에 관한 기본법」에 따라 이를 본 약관과 기능 이용 화면에서 미리 알림.",
+        "AI로 생성된 이미지에는 앱 화면, 웹사이트(auraootd.com), 공유 링크 미리보기에서 'AI 생성' 표시가 붙음.",
+        "AI 생성 표시를 제거하거나 가리는 행위, AI 생성 이미지를 실제 인물 촬영 사진인 것처럼 게시·유포하는 행위 금지.",
         "AI 결과물은 실제 제품·인물·사실과 다를 수 있고 정확성을 보증하지 않음.",
         "AI 기능 이용 시 입력 이미지·텍스트가 AI 처리업체로 전송될 수 있음.",
         "AI로 타인의 권리 침해·약관 위반 콘텐츠 생성·게시 금지.",
@@ -198,6 +201,7 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
     {
       h: "제9조 (크리에이터 수익화)",
       b: [
+        "크리에이터 수익화(정산)는 만 19세 이상 성인 회원만 참여할 수 있음. 미성년자는 일반 기능은 이용 가능하나 수익화 프로그램에는 참여 불가.",
         "자격을 갖춘 크리에이터(예: AURA+ Pro 또는 파트너십 지정)는 수익화 프로그램에 참여할 수 있음.",
         "따라사기 등으로 발생한 확정 제휴 커미션의 기본 50%가 크리에이터 몫으로 적립되며, 등급(받은 저장 수 기준)에 따라 최대 70%까지 상향됨.",
         "수익은 제휴 네트워크에서 구매가 확정된 후 '확정 수익'이 되며(반품 시 취소), 확정분만 출금 가능액에 반영됨.",
@@ -266,7 +270,7 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
         "Upgrades apply immediately (possible proration); downgrades may apply at next renewal.",
         "Permanent assets remain usable on your account after a one-time purchase.",
         "Generation credits are topped up via a consumable in-app product; purchased credits do not expire (non-refundable; each store's policy prevails).",
-        "AURA+ Pro includes free generation credits each month. Free credits are usable only within the month granted, unused free credits expire at the start of each month (no carryover), and free credits are deducted before purchased credits.",
+        "AURA+ includes 10 and AURA+ Pro includes 30 free generation credits each month. Upgrading from AURA+ to AURA+ Pro within a month grants the difference immediately. Free credits are usable only within the month granted, unused free credits expire at the start of each month (no carryover), and free credits are deducted before purchased credits.",
         "New members may receive a one-time free trial credit.",
         "Changes to price, structure, or credit grant amounts apply from the next billing cycle after prior notice.",
       ],
@@ -293,6 +297,9 @@ export const TERMS: { ko: Sec[]; en: Sec[] } = {
       h: "8. AI-Generated Content",
       b: [
         "Some content may be generated or enhanced by AI.",
+        "The AI photo feature is powered by generative AI. We disclose this in advance in these Terms and on the feature screen, as required by Korea's Framework Act on the Development of Artificial Intelligence and the Establishment of Trust.",
+        "AI-generated images carry an 'AI-generated' (AI 생성) label in the app, on our website (auraootd.com), and in shared link previews.",
+        "You may not remove or obscure the AI-generated label, or post or distribute AI-generated images as if they were photographs of real people.",
         "AI outputs may differ from real products/persons/facts and are not warranted for accuracy.",
         "When using AI features, your input images/text may be sent to AI providers.",
         "You may not use AI to create/post content infringing others' rights or violating these Terms.",

@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { isAiImage } from "@/lib/aiGenerated";
 import type { Look } from "@/lib/looks";
+import { AiBadge } from "./AiBadge";
 import { Reveal } from "./Reveal";
 import { SmartImg } from "./SmartImg";
 
@@ -18,6 +20,7 @@ export function LiveLookCard({ look, delay = 0 }: { look: Look; delay?: number }
           <span className="absolute left-3 top-3 rounded-full bg-white/85 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-ink backdrop-blur">
             {look.tag}
           </span>
+          {isAiImage(look.image) ? <AiBadge /> : null}
           <div className="absolute inset-x-0 bottom-0 p-4">
             <h3 className="font-serif text-[20px] leading-tight text-white drop-shadow-sm">
               {look.title}
