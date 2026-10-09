@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
 import { Reveal } from "@/components/Reveal";
+import { CreatorsOpening } from "@/components/creators/Opening";
+import { Ledger } from "@/components/creators/Ledger";
+import { Faq, TierStairs } from "@/components/creators/Extras";
+import { ScrollProgress } from "@/components/home/ScrollProgress";
+import { StoryCta, WordReveal } from "@/components/story/shared";
+import { storyLooks } from "@/lib/looks";
 
 export const metadata: Metadata = {
   title: "크리에이터 수익 — 발생·확인·정산",
@@ -68,89 +74,43 @@ const faqs = [
 export default function CreatorsPage() {
   return (
     <>
-      <section className="pt-14 pb-7">
-        <div className="wrap">
-          <Reveal>
-            <span className="eyebrow">Creators</span>
-            <h1 className="mt-3 font-serif text-[clamp(30px,5.2vw,50px)] font-bold leading-tight tracking-tight text-navy">
-              크리에이터 수익, 이렇게 흐릅니다
-            </h1>
-            <p className="mt-3.5 max-w-2xl text-[clamp(15px,2.2vw,19px)] text-sub">
-              좋아하는 코디를 올리고, 따라사기 링크로 수익을 냅니다. 발생부터 정산까지 모든 단계를 투명하게 보여드려요.
-            </p>
-          </Reveal>
+      <ScrollProgress />
+
+      {/* 도입 — 룩을 올린 저녁에서 수익이 잡힌 다음 달까지, 세 장면 */}
+      <CreatorsOpening look={storyLooks.creators} />
+
+      {/* 한 문장 — 어절 단위로 또렷해진다 */}
+      <section className="bg-cream py-24 md:py-32">
+        <div className="wrap max-w-5xl">
+          <span className="eyebrow">For Creators</span>
+          <WordReveal
+            className="mt-5 font-serif text-[clamp(26px,4.2vw,54px)] font-bold leading-[1.3] tracking-tight text-navy"
+            accentLast={3}
+            text="누군가의 옷장에 내가 고른 옷이 걸립니다. 그 한 벌이 어디서 와서 어디로 가는지, 숫자 하나 숨기지 않고 보여드릴게요."
+          />
         </div>
       </section>
 
-      <section className="pb-6">
-        <div className="wrap grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {steps.map((s, i) => (
-            <Reveal key={s.n} delay={(i % 3) * 0.06}>
-              <div className="h-full rounded-[18px] border border-line bg-white p-6 shadow-soft">
-                <span className="font-serif text-[28px] font-bold text-brand">{s.n}</span>
-                <h3 className="mt-2 font-serif text-[20px] font-bold text-navy">{s.t}</h3>
-                <p className="mt-2 text-[14px] leading-relaxed text-sub">{s.d}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      {/* 수익의 흐름 — 휠 한 단계마다 정산서에 한 줄씩 찍힌다 */}
+      <Ledger steps={steps} />
 
-      <section className="pb-6">
+      {/* 등급별 수익공유율 */}
+      <TierStairs tiers={tiers} live={TIER_PROGRAM_LIVE} />
+
+      {/* 자주 묻는 질문 */}
+      <Faq items={faqs} />
+
+      {/* 참여 자격 */}
+      <section className="bg-cream pb-6">
         <div className="wrap">
           <Reveal>
-            <h2 className="font-serif text-[24px] font-bold text-navy">
-              등급별 수익공유율{TIER_PROGRAM_LIVE ? "" : " (준비 중)"}
-            </h2>
-            <p className="mt-2 max-w-2xl text-[14px] leading-relaxed text-sub">
-              {TIER_PROGRAM_LIVE
-                ? "받은 저장 수가 쌓일수록 등급이 올라가고, 등급이 높을수록 확정 커미션에서 크리에이터가 가져가는 비율이 커집니다."
-                : "지금은 모든 크리에이터에게 50%가 적용돼요. 아래 등급제는 준비 중이며, 시행 전에 미리 알려드려요."}
-            </p>
-            <div className="mt-5 overflow-hidden rounded-[18px] border border-line bg-white shadow-soft">
-              {tiers.map((t, i) => (
-                <div
-                  key={t.name}
-                  className={`flex items-center px-6 py-4 ${i < tiers.length - 1 ? "border-b border-line" : ""}`}
-                >
-                  <span className="w-24 font-serif text-[17px] font-bold text-navy">{t.name}</span>
-                  <span className="flex-1 text-[13px] text-sub">{t.note}</span>
-                  <span className="text-[18px] font-bold text-brand">{t.share}</span>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="pb-6">
-        <div className="wrap">
-          <Reveal>
-            <h2 className="font-serif text-[24px] font-bold text-navy">자주 묻는 질문</h2>
-            <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {faqs.map((f, i) => (
-                <Reveal key={f.q} delay={(i % 3) * 0.06}>
-                  <div className="h-full rounded-[18px] border border-line bg-white p-6 shadow-soft">
-                    <h3 className="text-[15px] font-bold text-navy">Q. {f.q}</h3>
-                    <p className="mt-2 text-[14px] leading-relaxed text-sub">{f.a}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="pb-16">
-        <div className="wrap">
-          <Reveal>
-            <div className="rounded-[18px] bg-navy p-7 text-white sm:p-9">
-              <h2 className="font-serif text-[24px] font-bold">누가 수익을 낼 수 있나요?</h2>
-              <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-white/85">
+            <div className="grain relative overflow-hidden rounded-[24px] bg-navy p-7 text-white sm:p-10">
+              <h2 className="font-serif text-[clamp(22px,3vw,32px)] font-bold">누가 수익을 낼 수 있나요?</h2>
+              <p className="mt-3 max-w-2xl break-keep text-[15px] leading-relaxed text-white/85">
                 따라사기 상품 업로드는 누구나 할 수 있어요. 다만 <b>수익 적립·정산은 크리에이터</b>에게 열려 있습니다 —
                 최상위 멤버십(AURA+ Pro)에 자동으로 부여되며, 파트너십으로 지정된 크리에이터도 포함됩니다.
               </p>
-              <ul className="mt-5 space-y-2 text-[14px] text-white/80">
+              <ul className="mt-5 space-y-2 break-keep text-[14px] text-white/80">
                 <li>· 참여 자격: <b>만 19세 이상 성인</b>(미성년자는 룩 게시는 가능하나 수익화 불가)</li>
                 <li>· 커미션 분배: 확정 제휴 커미션의 50%가 크리에이터 몫(등급별 차등은 준비 중)</li>
                 <li>· 출금: 월 1회 · 최소 ₩10,000 · 신청 후 담당자가 이메일로 본인확인 서류 안내</li>
@@ -161,6 +121,16 @@ export default function CreatorsPage() {
           </Reveal>
         </div>
       </section>
+
+      <StoryCta
+        title={
+          <>
+            오늘 입은 옷부터,
+            <br />한 장 올려 보세요.
+          </>
+        }
+        body="AURA는 iPhone에서 무료로 받을 수 있어요. 첫 룩을 올리고 따라사기를 연결해 보세요."
+      />
     </>
   );
 }

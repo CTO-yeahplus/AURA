@@ -61,7 +61,7 @@ export const coupangPicks: CoupangPick[] = [
   {
     title: "르넥트 컬러 페어링 립앤치크",
     tag: "Beauty · 메이크업",
-    desc: "밀착력 좋은 데일리 쿠션 팩트. 자연스러운 광채 마무리.",
+    desc: "립과 치크를 한 번에. 두 가지 컬러를 섞어 쓰는 데일리 메이크업.",
     image: "/03.png",
     gradient: "from-brand-soft to-accent",
     productUrl:

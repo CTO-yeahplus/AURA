@@ -73,7 +73,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
 const smooth = (t: number) => t * t * (3 - 2 * t);
 
 /** 폰 화면 — 홍보 컷은 crop 좌표로 폰 화면만 잘라 틀에 꽉 채운다. 못 불러오면 장면 이름이 남는다. */
-function ScreenShot({ shot, label }: { shot: AppShot; label: string }) {
+export function ScreenShot({ shot, label }: { shot: AppShot; label: string }) {
   const ref = useRef<HTMLImageElement>(null);
   const [state, setState] = useState<"loading" | "ok" | "error">("loading");
   useEffect(() => {
@@ -113,7 +113,7 @@ function ScreenShot({ shot, label }: { shot: AppShot; label: string }) {
 }
 
 /** 폰 틀 — 폭(px)만 받으면 베젤·모서리가 비례해서 그려진다. */
-function PhoneFrame({ w, children }: { w: number; children: React.ReactNode }) {
+export function PhoneFrame({ w, children }: { w: number; children: React.ReactNode }) {
   const bezel = Math.max(5, w * 0.026);
   return (
     <div

@@ -58,6 +58,29 @@ export const heroLook = {
     { label: "러너 스니커즈", side: "left", top: "88%", at: 0.7 },
   ],
 } as const;
+/**
+ * 이야기 페이지(/creators, /about) 도입 장면에 세우는 홈피드 룩(AI 생성 화보 → 'AI 생성' 배지).
+ * tags·item은 그 룩에 실제로 연결된 따라사기 상품에서 가져온 이름이다.
+ */
+export const storyLooks = {
+  creators: {
+    id: "2318ecf1-84b1-48b1-b3ce-ef7941972ef6",
+    image:
+      "https://zofydqjyfzvyusbkllan.supabase.co/storage/v1/object/public/looks/268c3a60-16ad-4287-b6aa-33543261a5fd/seed-ai/1785799602869-xbnrvl.png",
+    item: "반소매 셔츠",
+  },
+  about: {
+    id: "b670cb47-42ce-4b8b-965e-59389380f410",
+    image:
+      "https://zofydqjyfzvyusbkllan.supabase.co/storage/v1/object/public/looks/268c3a60-16ad-4287-b6aa-33543261a5fd/seed-ai/1785799533409-e1m7w4.png",
+    tags: [
+      { label: "배색 카디건", side: "left", top: "30%" },
+      { label: "플리츠 스커트", side: "right", top: "58%" },
+      { label: "스니커즈", side: "left", top: "88%" },
+    ],
+  },
+} as const;
+
 export const spotlightImage = photo("1469334031218-e382a71b716b");
 
 const homeLooksRaw: Look[] = [

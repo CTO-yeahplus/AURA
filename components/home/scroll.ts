@@ -26,6 +26,21 @@ export function lerp(a: number, b: number, t: number): number {
   return a + (b - a) * t;
 }
 
+/** a→b 동안 떠오르고, c→d 동안 가라앉는다(그 사이는 1). 장면이 들어왔다 나가는 구간에 쓴다. */
+export function plateau(v: number, a: number, b: number, c: number, d: number): number {
+  return Math.min(span(v, a, b), 1 - span(v, c, d));
+}
+
+export const smooth = (t: number) => t * t * (3 - 2 * t);
+
+/** 고정 구간 el 안에서 n단계 중 i번째가 한가운데 오는 위치로 스크롤한다. */
+export function scrollToStep(el: HTMLElement | null, i: number, n: number, into = 0.3): void {
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.scrollY - HEADER_PX;
+  const travel = el.offsetHeight - (window.innerHeight - HEADER_PX);
+  window.scrollTo({ top: top + (travel * (i + into)) / n, behavior: "smooth" });
+}
+
 /** 화면 크기(고정 구간 안쪽 기준 높이 포함). 서버 렌더는 데스크톱 값으로 시작한다. */
 export function useViewport(): { w: number; h: number; desktop: boolean; ready: boolean } {
   const [size, setSize] = useState({ w: 1440, h: 800, ready: false });

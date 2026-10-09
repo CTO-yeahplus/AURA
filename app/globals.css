@@ -48,6 +48,12 @@
     color: transparent;
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
   }
+  /* 영수증 아래 톱니 모서리(/creators 정산서) */
+  .receipt-edge {
+    background:
+      linear-gradient(135deg, #fff 25%, transparent 25%) 0 0 / 12px 12px,
+      linear-gradient(225deg, #fff 25%, transparent 25%) 0 0 / 12px 12px;
+  }
   /* 스크롤 안내 — 마우스 휠 점이 아래로 구른다 */
   .wheel-dot {
     animation: wheel-dot 1.6s ease-in-out infinite;
