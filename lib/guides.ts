@@ -37,6 +37,8 @@ export type Guide = {
   updated: string;
   heroGradient: string;
   image?: string;
+  /** 이 가이드가 어울리는 날의 장면 — 때·곳(when)과 한 줄(line). 목록·상세 머리에 쓴다. */
+  scene?: { when: string; line: string };
   sections: GuideSection[];
 };
 
@@ -49,6 +51,7 @@ export const GUIDES: Guide[] = [
     intro:
       "모던 캐주얼의 핵심은 '단정한 상의 하나와 편한 하의 하나'예요. 셔츠나 카디건처럼 깃과 단추가 있는 상의가 룩의 중심을 잡아 주면, 아래는 와이드 데님이든 롱 스커트든 편하게 풀어도 정돈돼 보입니다. AURA 홈피드에 올라온 룩 가운데 매일 입기 좋은 다섯 가지를 골라 코디 포인트를 정리했어요. 사진은 모두 AI로 생성한 화보이며, 각 룩에 쓰인 아이템은 구매처에서 바로 만나볼 수 있습니다.",
     updated: "2026년 10월",
+    scene: { when: "수요일 아침 8시 · 현관 거울 앞", line: "아무 약속 없는 날에도, 단정하고 싶은 마음이 있습니다." },
     heroGradient: "from-brand-soft to-accent",
     image: "https://zofydqjyfzvyusbkllan.supabase.co/storage/v1/object/public/looks/268c3a60-16ad-4287-b6aa-33543261a5fd/seed-ai/1785799602869-xbnrvl.png",
     sections: [
@@ -127,6 +130,7 @@ export const GUIDES: Guide[] = [
     intro:
       "요즘 스트릿은 헐렁한 옷을 겹치기보다 '단정한 옷을 편한 신발로 푸는' 쪽에 가까워요. 롱 스커트든 데님 쇼츠든 발끝에 스니커즈가 오면 룩 전체가 거리의 무드로 바뀝니다. AURA 홈피드의 스트릿 룩 가운데 따라 입기 쉬운 다섯 가지를 골랐어요. 사진은 모두 AI로 생성한 화보이며, 각 룩에 쓰인 아이템은 구매처에서 바로 만나볼 수 있습니다.",
     updated: "2026년 10월",
+    scene: { when: "금요일 저녁 6시 · 퇴근길 골목", line: "오늘은 조금 멀리 돌아서 걷고 싶습니다." },
     heroGradient: "from-accent to-brand-soft",
     image: "https://zofydqjyfzvyusbkllan.supabase.co/storage/v1/object/public/looks/268c3a60-16ad-4287-b6aa-33543261a5fd/seed-ai/1785799507347-zzc1t7.png",
     sections: [
@@ -205,6 +209,7 @@ export const GUIDES: Guide[] = [
     intro:
       "러블리 룩이 부담스러워지는 건 사랑스러운 요소를 한꺼번에 올릴 때예요. 레이스든 러플이든 리본이든 '한 군데에만' 두고 나머지를 담백하게 비우면 매일 입어도 과하지 않습니다. AURA 홈피드의 러블리 룩 다섯 가지에서 그 한 끗을 찾아 정리했어요. 사진은 모두 AI로 생성한 화보이며, 각 룩에 쓰인 아이템은 구매처에서 바로 만나볼 수 있습니다.",
     updated: "2026년 10월",
+    scene: { when: "토요일 오후 2시 · 약속 장소 가는 길", line: "거울을 한 번 더 보게 되는 날이 있습니다." },
     heroGradient: "from-brand-soft to-accent",
     image: "https://zofydqjyfzvyusbkllan.supabase.co/storage/v1/object/public/looks/268c3a60-16ad-4287-b6aa-33543261a5fd/seed-ai/1785799335092-l9dmg2.png",
     sections: [
@@ -283,6 +288,7 @@ export const GUIDES: Guide[] = [
     intro:
       "미니멀 옷장은 옷이 적은 옷장이 아니라 '한 벌을 여러 번 입는' 옷장이에요. AURA 홈피드의 미니멀 룩 네 가지는 모두 같은 화이트 카펜터 팬츠에서 출발합니다. 상의의 색과 소재만 바꿨을 뿐인데 무드가 얼마나 달라지는지 비교해 보세요. 사진은 모두 AI로 생성한 화보이며, 각 룩에 쓰인 아이템은 구매처에서 바로 만나볼 수 있습니다.",
     updated: "2026년 10월",
+    scene: { when: "월요일 아침 7시 · 옷장 앞", line: "생각이 많은 날엔, 옷이라도 덜어내고 싶습니다." },
     heroGradient: "from-accent to-brand-soft",
     image: "https://zofydqjyfzvyusbkllan.supabase.co/storage/v1/object/public/looks/268c3a60-16ad-4287-b6aa-33543261a5fd/seed-ai/1785799200923-ugcc2b.png",
     sections: [
