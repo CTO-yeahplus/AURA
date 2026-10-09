@@ -37,8 +37,8 @@ export async function POST(req: Request) {
       from: FROM,
       to: [TO],
       replyTo: email,
-      subject: `[AURA] 새 대기자 신청: ${email}`,
-      text: `AURA 출시 대기자 신청이 접수됐어요.\n\n이메일: ${email}\n시각: ${new Date().toISOString()}`,
+      subject: `[AURA] Android 출시 알림 신청: ${email}`,
+      text: `AURA Android 출시 알림 신청이 접수됐어요(iOS는 2026-08 출시 완료).\n\n이메일: ${email}\n시각: ${new Date().toISOString()}`,
     });
     if (error) {
       return NextResponse.json({ ok: false, reason: "send_failed" }, { status: 502 });

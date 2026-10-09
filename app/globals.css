@@ -43,6 +43,27 @@
   .marquee {
     animation: marquee 28s linear infinite;
   }
+  /* 윤곽선만 남긴 대형 타이포 — 히어로 배경을 가로지르는 글자 */
+  .stroke-text {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  }
+  /* 스크롤 안내 — 마우스 휠 점이 아래로 구른다 */
+  .wheel-dot {
+    animation: wheel-dot 1.6s ease-in-out infinite;
+  }
+}
+
+@keyframes wheel-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70%,
+  100% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
 }
 
 @keyframes marquee {

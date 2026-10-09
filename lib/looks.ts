@@ -44,8 +44,20 @@ function attachImages(looks: Look[], offset: number): Look[] {
   }));
 }
 
-/** 히어로/스포트라이트용 대표 컷. */
-export const heroImage = photo("1483985988355-763728e1935b");
+/**
+ * 히어로 대표 컷 — 앱 홈피드(public.looks)의 실제 룩 한 장(AI 생성 화보 → 화면에 'AI 생성' 배지).
+ * tags는 이 룩에 연결된 따라사기 상품 셋. top은 사진 높이 기준 위치(카드로 접혔을 때 태그가 붙는 자리).
+ */
+export const heroLook = {
+  id: "bad33fe6-5b11-4252-bf6e-5d55c95a8f82",
+  image:
+    "https://zofydqjyfzvyusbkllan.supabase.co/storage/v1/object/public/looks/268c3a60-16ad-4287-b6aa-33543261a5fd/seed-ai/1785799589761-yabsvq.png",
+  tags: [
+    { label: "프린트 티셔츠", side: "left", top: "37%", at: 0.5 },
+    { label: "새틴 롱 스커트", side: "right", top: "60%", at: 0.6 },
+    { label: "러너 스니커즈", side: "left", top: "88%", at: 0.7 },
+  ],
+} as const;
 export const spotlightImage = photo("1469334031218-e382a71b716b");
 
 const homeLooksRaw: Look[] = [

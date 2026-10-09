@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { APP_STORE_URL } from "@/lib/app";
 
 const links = [
   { href: "/ootd", label: "OOTD" },
@@ -27,9 +28,9 @@ export function Header() {
               {l.label}
             </Link>
           ))}
-          <Link href="/#waitlist" className="btn">
-            앱 출시 알림
-          </Link>
+          <a href={APP_STORE_URL} target="_blank" rel="noopener" className="btn">
+            앱 다운로드
+          </a>
         </nav>
       </div>
     </header>

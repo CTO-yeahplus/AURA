@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { APP_STORE_ID } from "@/lib/app";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://auraootd.com"),
@@ -19,6 +20,8 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: { icon: "/aura_logo_1k.png" },
+  // iOS Safari 상단에 '앱 열기/받기' 스마트 배너를 띄운다.
+  itunes: { appId: APP_STORE_ID },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

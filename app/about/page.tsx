@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { APP_STORE_URL } from "@/lib/app";
 
 export const metadata: Metadata = {
   title: "소개",
@@ -42,7 +42,7 @@ export default function AboutPage() {
       </div>
 
       <div className="mt-9">
-        <Link href="/#waitlist" className="btn">앱 출시 알림 받기</Link>
+        <a href={APP_STORE_URL} target="_blank" rel="noopener" className="btn">App Store에서 받기</a>
       </div>
     </article>
   );
