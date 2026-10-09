@@ -17,6 +17,12 @@ const nextConfig = {
       { source: '/u/:path*', destination: '/ootd', permanent: false },
       { source: '/t/:path*', destination: '/ootd', permanent: false },
       { source: '/s', destination: '/ootd', permanent: false },
+      // 스타일 가이드 개편(2026-10): 사진·내용을 홈피드 룩 기반 에디토리얼로 교체하며 슬러그가 바뀌었다.
+      // 옛 주소는 가장 가까운 새 가이드로 보낸다(뷰티 가이드는 홈피드에 대응 룩이 없어 목록으로).
+      { source: '/guides/winter-coordi-guide', destination: '/guides/modern-casual-look-guide', permanent: false },
+      { source: '/guides/daily-office-look-guide', destination: '/guides/minimal-white-pants-guide', permanent: false },
+      { source: '/guides/spring-date-look-guide', destination: '/guides/lovely-look-guide', permanent: false },
+      { source: '/guides/daily-base-makeup-guide', destination: '/guides', permanent: false },
     ];
   },
 };
