@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getMergedGuides } from "@/lib/guidesDb";
+import { publishedArticles } from "@/lib/articles";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = "https://auraootd.com";
@@ -28,5 +29,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
-  return [...staticEntries, ...guideEntries];
+  // 읽을거리(글 가이드) — 발행한 글만. 고친 날을 그대로 알린다.
+  const articleEntries = publishedArticles().map((a) => ({
+    url: `${base}/guides/${a.slug}`,
+    lastModified: new Date(a.updated_at),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+  return [...staticEntries, ...guideEntries, ...articleEntries];
 }

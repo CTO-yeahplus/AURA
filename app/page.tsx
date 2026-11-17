@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { DisclosureNote } from "@/components/DisclosureNote";
 import { AppTour } from "@/components/home/AppTour";
@@ -24,6 +25,9 @@ const moods = [
   "#발레코어", "#Y2K", "#미니멀", "#프렌치시크", "#페미닌", "#스트릿",
   "#글로우메이크업", "#오피스룩", "#데이트룩", "#모노톤",
 ];
+
+// 대표 주소 — 제목 · 설명은 app/layout.tsx 의 기본값을 그대로 쓴다. (layout 에 두면 모든 쪽이 홈을 대표 주소로 물려받는다)
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default async function Home() {
   // 라이브 룩이 충분하면 그것을, 아니면(env 미설정·조회 실패) 정적 에디터 룩으로 폴백.

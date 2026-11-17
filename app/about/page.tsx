@@ -7,6 +7,7 @@ import { StoryCta, WordReveal } from "@/components/story/shared";
 import { storyLooks } from "@/lib/looks";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "소개",
   description: "AURA와 운영사 YEAHPLUS 소개. 패션·뷰티 OOTD 커뮤니티.",
 };

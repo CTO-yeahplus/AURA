@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/disclosure" },
   title: "제휴(어필리에이트) 고지",
   description: "AURA의 제휴(어필리에이트) 링크 정책 및 광고 고지. Affiliate disclosure.",
 };

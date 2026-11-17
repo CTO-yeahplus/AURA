@@ -3,6 +3,7 @@ import { LegalArticle } from "@/components/LegalArticle";
 import { TERMS } from "@/lib/legalContent";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/terms" },
   title: "이용약관 / Terms of Service",
   description: "AURA 이용약관. Terms of Service for AURA / auraootd.com (한국어 · English).",
 };

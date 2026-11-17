@@ -8,6 +8,7 @@ import { StoryCta, WordReveal } from "@/components/story/shared";
 import { storyLooks } from "@/lib/looks";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/creators" },
   title: "크리에이터 수익 — 발생·확인·정산",
   description:
     "AURA 크리에이터는 따라사기 링크로 수익을 냅니다. 수익 발생부터 확인, 정산·출금까지의 흐름을 투명하게 안내합니다.",

@@ -7,6 +7,7 @@ import { StoryCta, WordReveal } from "@/components/story/shared";
 import { coupangPicks, COUPANG_PARTNERS_ID } from "@/lib/coupangPicks";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/picks" },
   title: "AURA PICKS — 오늘의 따라사기",
   description:
     "AURA 에디터가 고른 이번 주 패션·뷰티 아이템. 마음에 드는 상품을 쿠팡에서 바로 만나보세요.",

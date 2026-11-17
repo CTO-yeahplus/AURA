@@ -3,6 +3,7 @@ import { LegalArticle } from "@/components/LegalArticle";
 import { GUIDELINES } from "@/lib/legalContent";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/community-guidelines" },
   title: "커뮤니티 가이드라인 / Community Guidelines",
   description: "AURA 커뮤니티 가이드라인. Community Guidelines for AURA (한국어 · English).",
 };

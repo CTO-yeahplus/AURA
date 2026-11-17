@@ -6,11 +6,14 @@ import { ScrollProgress } from "@/components/home/ScrollProgress";
 import { StoryCta, WordReveal } from "@/components/story/shared";
 import { getLiveLooks } from "@/lib/liveLooks";
 import { getMergedGuides } from "@/lib/guidesDb";
+import { monthLabel, visibleArticles } from "@/lib/articles";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "스타일 가이드 — 홈피드 룩으로 푼 코디 공식",
   description:
     "AURA 홈피드의 룩으로 풀어 쓴 스타일 가이드. 캐주얼·스트릿·러블리·미니멀 코디 공식을 따라 하기 쉽게 정리하고, 아이템 구매처까지 연결했어요.",
+  alternates: { canonical: "/guides" },
 };
 
 export const dynamic = "force-dynamic";
@@ -37,6 +40,7 @@ export default async function GuidesPage() {
     new Set(guides.flatMap((g) => g.sections.map((s) => s.image).filter((x): x is string => !!x)))
   );
   const lookCount = guides.reduce((n, g) => n + g.sections.length, 0);
+  const articles = visibleArticles();
 
   return (
     <>
@@ -59,6 +63,34 @@ export default async function GuidesPage() {
 
       {/* 가이드 목차 — 휠 한 단계에 한 편 */}
       <GuideChapters chapters={chapters} />
+
+      {/* 읽을거리 — 질문에 답하는 글(lib/articles.ts). 연출 없이 늘 보이는 목록이다. */}
+      {articles.length > 0 ? (
+        <section className="bg-white py-16 md:py-20">
+          <div className="wrap max-w-5xl">
+            <span className="eyebrow">Read</span>
+            <h2 className="mt-2 font-serif text-[clamp(24px,3.4vw,40px)] font-bold text-navy">읽을거리</h2>
+            <p className="mt-2 text-[14px] text-sub">옷을 고르기 전에 궁금한 것들. 글로 정리했어요.</p>
+            <ul className="mt-7 grid gap-4 md:grid-cols-2">
+              {articles.map((a) => (
+                <li key={a.slug}>
+                  <Link
+                    href={`/guides/${a.slug}`}
+                    className="block h-full rounded-2xl border border-line bg-cream px-6 py-5 transition-colors hover:border-brand-dark"
+                  >
+                    <span className="text-xs font-bold tracking-[0.08em] text-brand-dark">
+                      {a.category} · {monthLabel(a.updated_at)}
+                      {a.published ? "" : " · 초안"}
+                    </span>
+                    <span className="mt-2 block break-keep font-serif text-[20px] font-bold leading-[1.4] text-navy">{a.title}</span>
+                    <span className="mt-2 block break-keep text-[14.5px] leading-[1.7] text-sub">{a.description}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
 
       {live.length > 0 ? (
         <section className="bg-cream py-16 md:py-20">

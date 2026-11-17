@@ -3,6 +3,7 @@ import { LegalArticle } from "@/components/LegalArticle";
 import { PRIVACY } from "@/lib/legalContent";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/privacy" },
   title: "개인정보처리방침 / Privacy Policy",
   description: "AURA 개인정보처리방침. Privacy Policy for AURA / auraootd.com (한국어 · English).",
 };

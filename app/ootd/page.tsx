@@ -4,6 +4,7 @@ import { DisclosureNote } from "@/components/DisclosureNote";
 import { OotdFeed } from "@/components/OotdFeed";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/ootd" },
   title: "OOTD — 실시간 룩 피드",
   description:
     "AURA 앱 홈피드의 오늘의 룩을 auraootd.com에서 바로 만나보세요. 룩을 눌러 코디의 아이템을 구매처에서 바로 확인.",

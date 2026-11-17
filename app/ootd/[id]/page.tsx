@@ -14,6 +14,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   const look = await getLiveLookDetail(params.id);
   return {
     title: look ? `${look.title} — OOTD` : "OOTD",
+    alternates: { canonical: `/ootd/${params.id}` },
     description: look?.caption || "AURA 오늘의 룩과 따라사기 아이템.",
   };
 }
