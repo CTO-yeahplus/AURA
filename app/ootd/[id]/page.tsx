@@ -6,22 +6,26 @@ import { SmartImg } from "@/components/SmartImg";
 import { DisclosureNote } from "@/components/DisclosureNote";
 import { isAiImage } from "@/lib/aiGenerated";
 import { getLiveLookDetail } from "@/lib/liveLooks";
+import { lookSeo } from "@/lib/lookSeo";
 import { wrapLinkPrice } from "@/lib/linkprice";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const look = await getLiveLookDetail(params.id);
+  // 제목·설명에 이 룩의 상품(아이템 이름·브랜드)을 넣어 룩끼리 중복으로 묶이지 않게 한다(lib/lookSeo.ts).
+  const seo = look ? lookSeo(look) : null;
   return {
-    title: look ? `${look.title} — OOTD` : "OOTD",
+    title: seo ? seo.title : "OOTD",
     alternates: { canonical: `/ootd/${params.id}` },
-    description: look?.caption || "AURA 오늘의 룩과 따라사기 아이템.",
+    description: seo?.description || "AURA 오늘의 룩과 따라사기 아이템.",
   };
 }
 
 export default async function LookDetailPage({ params }: { params: { id: string } }) {
   const look = await getLiveLookDetail(params.id);
   if (!look) notFound();
+  const { title: seoTitle, summary } = lookSeo(look);
 
   return (
     <section className="pt-8 pb-20">
@@ -37,7 +41,7 @@ export default async function LookDetailPage({ params }: { params: { id: string 
               key={i}
               className="relative aspect-[3/4] w-full overflow-hidden rounded-[16px] bg-line"
             >
-              <SmartImg src={src} alt={look.title} />
+              <SmartImg src={src} alt={seoTitle} />
               {isAiImage(src) ? <AiBadge className="left-3 top-3" /> : null}
             </div>
           ))}
@@ -53,6 +57,7 @@ export default async function LookDetailPage({ params }: { params: { id: string 
           {look.title}
         </h1>
         {look.caption ? <p className="mt-2 text-[15px] text-sub">{look.caption}</p> : null}
+        {summary ? <p className="mt-1 text-[15px] text-sub">{summary}</p> : null}
 
         {/* 따라사기 — 클릭 시 LinkPrice 래핑 아웃링크(웹 어필리에이트 수익) */}
         <h2 className="mt-9 font-serif text-[20px] font-bold text-navy">따라사기</h2>
