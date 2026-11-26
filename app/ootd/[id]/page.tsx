@@ -15,10 +15,17 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   const look = await getLiveLookDetail(params.id);
   // 제목·설명에 이 룩의 상품(아이템 이름·브랜드)을 넣어 룩끼리 중복으로 묶이지 않게 한다(lib/lookSeo.ts).
   const seo = look ? lookSeo(look) : null;
+  const url = `/ootd/${params.id}`;
+  const title = seo ? seo.title : "OOTD";
+  const description = seo?.description || "AURA 오늘의 룩과 따라사기 아이템.";
+  // 공유 미리보기(og:/twitter:)도 룩마다 — 지정하지 않으면 레이아웃 기본값(og:url=홈, 같은 제목·설명)을 물려받아
+  // 모든 룩이 홈과 같은 페이지라고 알리게 된다. 미리보기 이미지는 opengraph-image.tsx가 그대로 붙인다.
   return {
-    title: seo ? seo.title : "OOTD",
-    alternates: { canonical: `/ootd/${params.id}` },
-    description: seo?.description || "AURA 오늘의 룩과 따라사기 아이템.",
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title: `${title} — AURA`, description, url, siteName: "AURA", type: "article" },
+    twitter: { card: "summary_large_image", title: `${title} — AURA`, description },
   };
 }
 
